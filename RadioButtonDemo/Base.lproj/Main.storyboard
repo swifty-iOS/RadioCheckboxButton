@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RadioButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sue-L6-iaP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-rA-9FT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-8F-uwz" customClass="RadioButtonGroupView" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="109.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-Z7-Gqv" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="69.5" width="111.5" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="giv-tB-h1V"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Option A">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPj-ME-wGz" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="131.5" y="69.5" width="112" height="30"/>
+                                                        <state key="normal" title="Option B">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soz-1q-oej" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="243.5" y="69.5" width="111.5" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Option C">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 1 (Using Group View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-Fz-Awz">
+                                                        <rect key="frame" x="20" y="5" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default: Selected color as tintColor and Deselected color as lightGray" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVL-t5-axX">
+                                                        <rect key="frame" x="20" y="30.5" width="335" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="9dM-Fz-Awz" firstAttribute="leading" secondItem="XZ1-8F-uwz" secondAttribute="leading" constant="20" id="0hp-ON-4gU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="soz-1q-oej" secondAttribute="bottom" constant="10" id="EEs-ww-x0g"/>
+                                                    <constraint firstAttribute="trailing" secondItem="soz-1q-oej" secondAttribute="trailing" constant="20" id="Kl1-yP-hkP"/>
+                                                    <constraint firstItem="soz-1q-oej" firstAttribute="leading" secondItem="dPj-ME-wGz" secondAttribute="trailing" id="Oki-QA-kDN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yVL-t5-axX" secondAttribute="trailing" constant="20" id="S3r-Qu-cPf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9dM-Fz-Awz" secondAttribute="trailing" constant="20" id="ahr-3J-Sad"/>
+                                                    <constraint firstItem="dPj-ME-wGz" firstAttribute="width" secondItem="Iae-Z7-Gqv" secondAttribute="width" id="fpG-fY-I9q"/>
+                                                    <constraint firstItem="dPj-ME-wGz" firstAttribute="leading" secondItem="Iae-Z7-Gqv" secondAttribute="trailing" id="hPe-nO-CcQ"/>
+                                                    <constraint firstItem="soz-1q-oej" firstAttribute="height" secondItem="Iae-Z7-Gqv" secondAttribute="height" id="iEF-Of-LZk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Iae-Z7-Gqv" secondAttribute="bottom" constant="10" id="iij-RC-Z42"/>
+                                                    <constraint firstItem="Iae-Z7-Gqv" firstAttribute="leading" secondItem="XZ1-8F-uwz" secondAttribute="leading" constant="20" id="m88-vt-E34"/>
+                                                    <constraint firstItem="9dM-Fz-Awz" firstAttribute="top" secondItem="XZ1-8F-uwz" secondAttribute="top" constant="5" id="tKR-uv-Pza"/>
+                                                    <constraint firstItem="yVL-t5-axX" firstAttribute="top" secondItem="9dM-Fz-Awz" secondAttribute="bottom" constant="5" id="ujr-y6-w87"/>
+                                                    <constraint firstItem="yVL-t5-axX" firstAttribute="leading" secondItem="XZ1-8F-uwz" secondAttribute="leading" constant="20" id="unW-t4-bt0"/>
+                                                    <constraint firstItem="Iae-Z7-Gqv" firstAttribute="top" secondItem="yVL-t5-axX" secondAttribute="bottom" constant="10" id="wIV-dz-d6p"/>
+                                                    <constraint firstItem="soz-1q-oej" firstAttribute="width" secondItem="Iae-Z7-Gqv" secondAttribute="width" id="xMY-ZE-2DU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dPj-ME-wGz" secondAttribute="bottom" constant="10" id="xkr-3B-wrB"/>
+                                                    <constraint firstItem="dPj-ME-wGz" firstAttribute="height" secondItem="Iae-Z7-Gqv" secondAttribute="height" id="z76-cT-4sB"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB4-46-S4w" customClass="RadioButtonGroupView" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="189.5" width="375" height="215.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-Kg-fVz" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="55.5" width="335" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="tintColor" red="0.89558500050000001" green="0.14392472532503919" blue="0.12749821546555234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option A"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-UP-7fQ" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="95.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="0HT-d1-szo"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.022667623390277503" green="1" blue="0.16954482649514691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option B"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vde-wn-Dav" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="135.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="jL4-ad-MvV"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="1" green="0.047722692679762257" blue="0.95164430571445546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option C"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 2 (Using Group View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-8b-FtH">
+                                                        <rect key="frame" x="20" y="5" width="335" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-Cy-2ab" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="175.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="3co-uL-lEF"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.1618276572886751" green="0.13111155151693987" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option D"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customized: Selected and Deselected color as tintColor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIr-Fa-6c8">
+                                                        <rect key="frame" x="20" y="31" width="335" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="IU0-Cy-2ab" firstAttribute="top" secondItem="vde-wn-Dav" secondAttribute="bottom" constant="10" id="0zE-kF-8ov"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vde-wn-Dav" secondAttribute="trailing" constant="20" id="Bas-bB-McS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BHa-8b-FtH" secondAttribute="trailing" constant="20" id="I9k-RK-my8"/>
+                                                    <constraint firstItem="hca-UP-7fQ" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="KuW-ho-UVB"/>
+                                                    <constraint firstItem="BHa-8b-FtH" firstAttribute="top" secondItem="KB4-46-S4w" secondAttribute="top" constant="5" id="Mrn-aX-217"/>
+                                                    <constraint firstItem="hca-UP-7fQ" firstAttribute="top" secondItem="Byp-Kg-fVz" secondAttribute="bottom" constant="10" id="NrN-Bu-3SB"/>
+                                                    <constraint firstItem="Byp-Kg-fVz" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="Oje-JL-ov4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IU0-Cy-2ab" secondAttribute="bottom" constant="10" id="Qb4-LK-oPh"/>
+                                                    <constraint firstItem="lIr-Fa-6c8" firstAttribute="top" secondItem="BHa-8b-FtH" secondAttribute="bottom" constant="5" id="Vd7-hn-W1a"/>
+                                                    <constraint firstItem="vde-wn-Dav" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="W0B-Km-0ju"/>
+                                                    <constraint firstItem="lIr-Fa-6c8" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="ZTX-JD-i5r"/>
+                                                    <constraint firstItem="BHa-8b-FtH" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="hJU-Rx-84D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lIr-Fa-6c8" secondAttribute="trailing" constant="20" id="mdh-lS-VBo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Byp-Kg-fVz" secondAttribute="trailing" constant="20" id="mw8-xh-346"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hca-UP-7fQ" secondAttribute="trailing" constant="20" id="teU-BE-Bp1"/>
+                                                    <constraint firstItem="vde-wn-Dav" firstAttribute="top" secondItem="hca-UP-7fQ" secondAttribute="bottom" constant="10" id="uta-pl-gI1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IU0-Cy-2ab" secondAttribute="trailing" constant="20" id="xBv-5P-dxK"/>
+                                                    <constraint firstItem="Byp-Kg-fVz" firstAttribute="top" secondItem="lIr-Fa-6c8" secondAttribute="bottom" constant="10" id="xaO-YZ-VxZ"/>
+                                                    <constraint firstItem="IU0-Cy-2ab" firstAttribute="leading" secondItem="KB4-46-S4w" secondAttribute="leading" constant="20" id="yKg-rb-bbN"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-gd-epr">
+                                                <rect key="frame" x="0.0" y="435" width="375" height="204"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU2-lS-rbq" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="zuc-Sy-IoL"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="tintColor" red="0.31591847984699989" green="0.81829905822907456" blue="0.89558500050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option A"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Lf-JsB" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="124" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Wp9-Kq-zfh"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="1" green="0.61731512548825718" blue="0.15413678142373621" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option B"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS9-5c-gDr" customClass="RadioButton" customModule="RadioButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="164" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="8wX-Me-5IT"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.51338217943021158" green="0.1026364170466646" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option C"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 3 (Using Group Container)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-Gb-JOc">
+                                                        <rect key="frame" x="20" y="5" width="335" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1W-Hk-V4W">
+                                                        <rect key="frame" x="20" y="31" width="335" height="43"/>
+                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection circle size.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.95478520055986027" green="0.95686274510000002" blue="0.76450413386408056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="OS9-5c-gDr" secondAttribute="bottom" constant="10" id="3Ur-gh-cFb"/>
+                                                    <constraint firstItem="qU2-lS-rbq" firstAttribute="leading" secondItem="cHO-gd-epr" secondAttribute="leading" constant="20" id="4Lp-W3-86O"/>
+                                                    <constraint firstItem="OS9-5c-gDr" firstAttribute="top" secondItem="spA-Lf-JsB" secondAttribute="bottom" constant="10" id="4oc-Xd-alC"/>
+                                                    <constraint firstItem="OS9-5c-gDr" firstAttribute="leading" secondItem="cHO-gd-epr" secondAttribute="leading" constant="20" id="7io-3Q-WlY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OS9-5c-gDr" secondAttribute="trailing" constant="20" id="9xL-0v-xue"/>
+                                                    <constraint firstItem="spA-Lf-JsB" firstAttribute="leading" secondItem="cHO-gd-epr" secondAttribute="leading" constant="20" id="Bfr-RA-6Zh"/>
+                                                    <constraint firstItem="qU2-lS-rbq" firstAttribute="top" secondItem="l1W-Hk-V4W" secondAttribute="bottom" constant="10" id="CLQ-4p-Xkw"/>
+                                                    <constraint firstItem="l1W-Hk-V4W" firstAttribute="top" secondItem="jRw-Gb-JOc" secondAttribute="bottom" constant="5" id="Gth-FE-v3O"/>
+                                                    <constraint firstItem="jRw-Gb-JOc" firstAttribute="leading" secondItem="cHO-gd-epr" secondAttribute="leading" constant="20" id="P7k-Zh-gdv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jRw-Gb-JOc" secondAttribute="trailing" constant="20" id="dbR-7g-abl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="spA-Lf-JsB" secondAttribute="trailing" constant="20" id="egv-ae-a3X"/>
+                                                    <constraint firstItem="jRw-Gb-JOc" firstAttribute="top" secondItem="cHO-gd-epr" secondAttribute="top" constant="5" id="i9W-mx-aEz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="l1W-Hk-V4W" secondAttribute="trailing" constant="20" id="m8a-nH-eCa"/>
+                                                    <constraint firstItem="spA-Lf-JsB" firstAttribute="top" secondItem="qU2-lS-rbq" secondAttribute="bottom" constant="10" id="mX6-js-2KM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qU2-lS-rbq" secondAttribute="trailing" constant="20" id="sXd-50-Bce"/>
+                                                    <constraint firstItem="l1W-Hk-V4W" firstAttribute="leading" secondItem="cHO-gd-epr" secondAttribute="leading" constant="20" id="v6c-LF-AXP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XZ1-8F-uwz" firstAttribute="leading" secondItem="FWm-rA-9FT" secondAttribute="leading" id="6Vj-Nt-AVR"/>
+                                            <constraint firstAttribute="bottom" secondItem="cHO-gd-epr" secondAttribute="bottom" constant="30" id="DQB-XJ-Gbs"/>
+                                            <constraint firstItem="cHO-gd-epr" firstAttribute="top" secondItem="KB4-46-S4w" secondAttribute="bottom" constant="30" id="FdU-Jp-VWh"/>
+                                            <constraint firstItem="KB4-46-S4w" firstAttribute="leading" secondItem="FWm-rA-9FT" secondAttribute="leading" id="NVu-ZT-OGT"/>
+                                            <constraint firstItem="KB4-46-S4w" firstAttribute="top" secondItem="XZ1-8F-uwz" secondAttribute="bottom" constant="30" id="bJH-MU-3dg"/>
+                                            <constraint firstItem="cHO-gd-epr" firstAttribute="leading" secondItem="FWm-rA-9FT" secondAttribute="leading" id="ep1-7P-efy"/>
+                                            <constraint firstAttribute="trailing" secondItem="cHO-gd-epr" secondAttribute="trailing" id="gCo-ro-RMw"/>
+                                            <constraint firstAttribute="trailing" secondItem="KB4-46-S4w" secondAttribute="trailing" id="hO6-0e-Qh0"/>
+                                            <constraint firstItem="XZ1-8F-uwz" firstAttribute="top" secondItem="FWm-rA-9FT" secondAttribute="top" constant="50" id="qN4-2G-YvW"/>
+                                            <constraint firstAttribute="trailing" secondItem="XZ1-8F-uwz" secondAttribute="trailing" id="s3B-aX-yDW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FWm-rA-9FT" firstAttribute="top" secondItem="sue-L6-iaP" secondAttribute="top" id="6rl-Va-5L4"/>
+                                    <constraint firstItem="FWm-rA-9FT" firstAttribute="leading" secondItem="sue-L6-iaP" secondAttribute="leading" id="J1U-JO-RMs"/>
+                                    <constraint firstAttribute="bottom" secondItem="FWm-rA-9FT" secondAttribute="bottom" id="RFG-kt-5mV"/>
+                                    <constraint firstAttribute="trailing" secondItem="FWm-rA-9FT" secondAttribute="trailing" id="gJ9-Ij-iD0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FWm-rA-9FT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ckz-Nm-5HI"/>
+                            <constraint firstItem="sue-L6-iaP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EbF-6J-b9E"/>
+                            <constraint firstAttribute="bottom" secondItem="sue-L6-iaP" secondAttribute="bottom" id="WQS-3U-L3J"/>
+                            <constraint firstAttribute="trailing" secondItem="sue-L6-iaP" secondAttribute="trailing" id="bgq-vW-2vK"/>
+                            <constraint firstItem="sue-L6-iaP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qva-hW-4yi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionAG3" destination="qU2-lS-rbq" id="g5G-ON-v6h"/>
+                        <outlet property="optionBG3" destination="spA-Lf-JsB" id="FJ8-wl-QBQ"/>
+                        <outlet property="optionCG3" destination="OS9-5c-gDr" id="icJ-Oe-uMq"/>
+                        <outlet property="viewGroup1" destination="XZ1-8F-uwz" id="Rlg-tb-4ZE"/>
+                        <outlet property="viewGroup2" destination="KB4-46-S4w" id="u56-7M-sMr"/>
+                        <outlet property="viewGroup3" destination="cHO-gd-epr" id="QRw-cL-UZU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="133.09859154929578"/>
+        </scene>
+    </scenes>
+</document>
