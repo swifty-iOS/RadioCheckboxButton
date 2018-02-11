@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1308453A2005D8B100C96F1C /* RadioButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1308453A2005D8B100C96F1C /* RadioAndCheckboxButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAndCheckboxButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1308453D2005D8B100C96F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1308453F2005D8B100C96F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		130845422005D8B100C96F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		130845312005D8B100C96F1C = {
 			isa = PBXGroup;
 			children = (
-				1308453C2005D8B100C96F1C /* RadioButtonDemo */,
+				1308453C2005D8B100C96F1C /* RadioAndCheckboxButtonDemo */,
 				1308453B2005D8B100C96F1C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		1308453B2005D8B100C96F1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1308453A2005D8B100C96F1C /* RadioButtonDemo.app */,
+				1308453A2005D8B100C96F1C /* RadioAndCheckboxButtonDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1308453C2005D8B100C96F1C /* RadioButtonDemo */ = {
+		1308453C2005D8B100C96F1C /* RadioAndCheckboxButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
 				139B8D27200B69E300507D9B /* Source */,
@@ -71,7 +71,7 @@
 				130845462005D8B100C96F1C /* LaunchScreen.storyboard */,
 				130845492005D8B100C96F1C /* Info.plist */,
 			);
-			path = RadioButtonDemo;
+			path = RadioAndCheckboxButtonDemo;
 			sourceTree = "<group>";
 		};
 		139B8D27200B69E300507D9B /* Source */ = {
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		130845392005D8B100C96F1C /* RadioButtonDemo */ = {
+		130845392005D8B100C96F1C /* RadioAndCheckboxButtonDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1308454C2005D8B100C96F1C /* Build configuration list for PBXNativeTarget "RadioButtonDemo" */;
+			buildConfigurationList = 1308454C2005D8B100C96F1C /* Build configuration list for PBXNativeTarget "RadioAndCheckboxButtonDemo" */;
 			buildPhases = (
 				130845362005D8B100C96F1C /* Sources */,
 				130845372005D8B100C96F1C /* Frameworks */,
@@ -99,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = RadioButtonDemo;
+			name = RadioAndCheckboxButtonDemo;
 			productName = RadioButtonDemo;
-			productReference = 1308453A2005D8B100C96F1C /* RadioButtonDemo.app */;
+			productReference = 1308453A2005D8B100C96F1C /* RadioAndCheckboxButtonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 130845352005D8B100C96F1C /* Build configuration list for PBXProject "RadioButtonDemo" */;
+			buildConfigurationList = 130845352005D8B100C96F1C /* Build configuration list for PBXProject "RadioAndCheckboxButtonDemo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -133,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				130845392005D8B100C96F1C /* RadioButtonDemo */,
+				130845392005D8B100C96F1C /* RadioAndCheckboxButtonDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -299,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RadioButtonDemo/Info.plist;
+				INFOPLIST_FILE = RadioAndCheckboxButtonDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = w.RadioButtonDemo;
@@ -314,7 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RadioButtonDemo/Info.plist;
+				INFOPLIST_FILE = RadioAndCheckboxButtonDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = w.RadioButtonDemo;
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		130845352005D8B100C96F1C /* Build configuration list for PBXProject "RadioButtonDemo" */ = {
+		130845352005D8B100C96F1C /* Build configuration list for PBXProject "RadioAndCheckboxButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1308454A2005D8B100C96F1C /* Debug */,
@@ -336,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1308454C2005D8B100C96F1C /* Build configuration list for PBXNativeTarget "RadioButtonDemo" */ = {
+		1308454C2005D8B100C96F1C /* Build configuration list for PBXNativeTarget "RadioAndCheckboxButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1308454D2005D8B100C96F1C /* Debug */,
