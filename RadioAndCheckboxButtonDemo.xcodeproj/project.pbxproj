@@ -13,6 +13,8 @@
 		130845452005D8B100C96F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130845442005D8B100C96F1C /* Assets.xcassets */; };
 		130845482005D8B100C96F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130845462005D8B100C96F1C /* LaunchScreen.storyboard */; };
 		13135C932006F1E300B20121 /* LoadingIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13135C922006F1E300B20121 /* LoadingIndicatorButton.swift */; };
+		138721A2203051AF00652028 /* RadioAndCheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138721A1203051AF00652028 /* RadioAndCheckboxButton.swift */; };
+		138721A42030524100652028 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138721A32030524100652028 /* CheckboxButton.swift */; };
 		139B8D2B200B69E300507D9B /* RadioButtonGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D28200B69E300507D9B /* RadioButtonGroupView.swift */; };
 		139B8D2C200B69E300507D9B /* RadioButtonGroupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D29200B69E300507D9B /* RadioButtonGroupContainer.swift */; };
 		139B8D2D200B69E300507D9B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D2A200B69E300507D9B /* RadioButton.swift */; };
@@ -27,6 +29,8 @@
 		130845472005D8B100C96F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		130845492005D8B100C96F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13135C922006F1E300B20121 /* LoadingIndicatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorButton.swift; sourceTree = "<group>"; };
+		138721A1203051AF00652028 /* RadioAndCheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioAndCheckboxButton.swift; sourceTree = "<group>"; };
+		138721A32030524100652028 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		139B8D28200B69E300507D9B /* RadioButtonGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonGroupView.swift; sourceTree = "<group>"; };
 		139B8D29200B69E300507D9B /* RadioButtonGroupContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonGroupContainer.swift; sourceTree = "<group>"; };
 		139B8D2A200B69E300507D9B /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -77,7 +81,9 @@
 		139B8D27200B69E300507D9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				138721A1203051AF00652028 /* RadioAndCheckboxButton.swift */,
 				139B8D2A200B69E300507D9B /* RadioButton.swift */,
+				138721A32030524100652028 /* CheckboxButton.swift */,
 				139B8D28200B69E300507D9B /* RadioButtonGroupView.swift */,
 				139B8D29200B69E300507D9B /* RadioButtonGroupContainer.swift */,
 			);
@@ -158,6 +164,8 @@
 			files = (
 				139B8D2B200B69E300507D9B /* RadioButtonGroupView.swift in Sources */,
 				13135C932006F1E300B20121 /* LoadingIndicatorButton.swift in Sources */,
+				138721A42030524100652028 /* CheckboxButton.swift in Sources */,
+				138721A2203051AF00652028 /* RadioAndCheckboxButton.swift in Sources */,
 				130845402005D8B100C96F1C /* ViewController.swift in Sources */,
 				139B8D2D200B69E300507D9B /* RadioButton.swift in Sources */,
 				1308453E2005D8B100C96F1C /* AppDelegate.swift in Sources */,
