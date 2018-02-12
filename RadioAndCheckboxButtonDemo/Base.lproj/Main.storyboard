@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jnG-4O-5p5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,22 +10,78 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="GYB-b7-5dp">
+            <objects>
+                <viewController id="jnG-4O-5p5" customClass="HomeViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8r-UI-Ejo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FZ9-Ox-5am">
+                                <rect key="frame" x="50" y="50" width="275" height="29"/>
+                                <segments>
+                                    <segment title="Checkbox"/>
+                                    <segment title="Radio"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChange:" destination="jnG-4O-5p5" eventType="valueChanged" id="cpe-ZC-CJG"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMs-Xj-c8V">
+                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="yGR-px-Il3"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWU-DG-1QF">
+                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
+                                <connections>
+                                    <segue destination="lPS-xe-QPL" kind="embed" id="0Iv-OV-Vhb"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FZ9-Ox-5am" firstAttribute="top" secondItem="JRs-B1-Gka" secondAttribute="top" constant="30" id="4Bf-6D-nEG"/>
+                            <constraint firstItem="JRs-B1-Gka" firstAttribute="bottom" secondItem="YWU-DG-1QF" secondAttribute="bottom" id="D7n-vE-iMW"/>
+                            <constraint firstItem="JRs-B1-Gka" firstAttribute="trailing" secondItem="YWU-DG-1QF" secondAttribute="trailing" id="I2b-xO-wdJ"/>
+                            <constraint firstItem="YWU-DG-1QF" firstAttribute="leading" secondItem="JRs-B1-Gka" secondAttribute="leading" id="MIO-sy-bd5"/>
+                            <constraint firstItem="YWU-DG-1QF" firstAttribute="top" secondItem="FZ9-Ox-5am" secondAttribute="bottom" constant="10" id="Wdb-ep-pRQ"/>
+                            <constraint firstItem="FZ9-Ox-5am" firstAttribute="leading" secondItem="JRs-B1-Gka" secondAttribute="leading" constant="50" id="Zhw-4n-ta8"/>
+                            <constraint firstItem="JRs-B1-Gka" firstAttribute="bottom" secondItem="bMs-Xj-c8V" secondAttribute="bottom" id="bVk-I9-Bca"/>
+                            <constraint firstItem="JRs-B1-Gka" firstAttribute="trailing" secondItem="bMs-Xj-c8V" secondAttribute="trailing" id="jrF-XN-yPV"/>
+                            <constraint firstItem="bMs-Xj-c8V" firstAttribute="top" secondItem="FZ9-Ox-5am" secondAttribute="bottom" constant="10" id="rLO-Of-E7J"/>
+                            <constraint firstItem="JRs-B1-Gka" firstAttribute="trailing" secondItem="FZ9-Ox-5am" secondAttribute="trailing" constant="50" id="utj-yd-LBV"/>
+                            <constraint firstItem="bMs-Xj-c8V" firstAttribute="leading" secondItem="JRs-B1-Gka" secondAttribute="leading" id="zAY-vX-r28"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JRs-B1-Gka"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerCheckbox" destination="YWU-DG-1QF" id="wsK-nf-HDd"/>
+                        <outlet property="containerRadio" destination="bMs-Xj-c8V" id="sgU-JC-Om6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZf-67-gJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="118"/>
+        </scene>
         <!--Radio Sample View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="RadioSampleViewController" id="BYZ-38-t0r" customClass="RadioSampleViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sue-L6-iaP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-rA-9FT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-8F-uwz" customClass="RadioButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="109.5"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="109.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-Z7-Gqv" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="69.5" width="111.5" height="30"/>
@@ -86,7 +142,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB4-46-S4w" customClass="RadioButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="189.5" width="375" height="215.5"/>
+                                                <rect key="frame" x="0.0" y="149.5" width="375" height="215.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-Kg-fVz" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="55.5" width="335" height="30"/>
@@ -158,7 +214,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-gd-epr">
-                                                <rect key="frame" x="0.0" y="435" width="375" height="204"/>
+                                                <rect key="frame" x="0.0" y="395" width="375" height="204"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU2-lS-rbq" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="84" width="335" height="30"/>
@@ -195,7 +251,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1W-Hk-V4W">
                                                         <rect key="frame" x="20" y="31" width="335" height="43"/>
-                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection circle size.</string>
+                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection circle size with defualt selection.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -232,7 +288,7 @@
                                             <constraint firstItem="cHO-gd-epr" firstAttribute="leading" secondItem="FWm-rA-9FT" secondAttribute="leading" id="ep1-7P-efy"/>
                                             <constraint firstAttribute="trailing" secondItem="cHO-gd-epr" secondAttribute="trailing" id="gCo-ro-RMw"/>
                                             <constraint firstAttribute="trailing" secondItem="KB4-46-S4w" secondAttribute="trailing" id="hO6-0e-Qh0"/>
-                                            <constraint firstItem="XZ1-8F-uwz" firstAttribute="top" secondItem="FWm-rA-9FT" secondAttribute="top" constant="50" id="qN4-2G-YvW"/>
+                                            <constraint firstItem="XZ1-8F-uwz" firstAttribute="top" secondItem="FWm-rA-9FT" secondAttribute="top" constant="10" id="qN4-2G-YvW"/>
                                             <constraint firstAttribute="trailing" secondItem="XZ1-8F-uwz" secondAttribute="trailing" id="s3B-aX-yDW"/>
                                         </constraints>
                                     </view>
@@ -266,24 +322,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="133.09859154929578"/>
+            <point key="canvasLocation" x="238" y="-75"/>
         </scene>
         <!--Checkbox Sample View Controller-->
         <scene sceneID="eWd-vA-9jo">
             <objects>
                 <viewController storyboardIdentifier="CheckboxSampleViewController" id="lPS-xe-QPL" customClass="CheckboxSampleViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9u-dV-TZN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-M9-zL4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-YF-62q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-5X-tU8" customClass="CheckboxButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="109.5"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="109.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Aq-b8X" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="69.5" width="111.5" height="30"/>
@@ -344,7 +400,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sx-9f-ZrT" customClass="CheckboxButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="189.5" width="375" height="215.5"/>
+                                                <rect key="frame" x="0.0" y="149.5" width="375" height="215.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-8O-2kn" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="55.5" width="335" height="30"/>
@@ -416,7 +472,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iip-r0-07i">
-                                                <rect key="frame" x="0.0" y="435" width="375" height="204"/>
+                                                <rect key="frame" x="0.0" y="395" width="375" height="204"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh1-bK-s5Z" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="84" width="335" height="30"/>
@@ -453,7 +509,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omu-0m-kjx">
                                                         <rect key="frame" x="20" y="31" width="335" height="43"/>
-                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection checkbox size.</string>
+                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection checkbox size with defualt selection. </string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -484,7 +540,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="8Sx-9f-ZrT" secondAttribute="trailing" id="57i-n0-Hqg"/>
                                             <constraint firstItem="8Sx-9f-ZrT" firstAttribute="top" secondItem="UNu-5X-tU8" secondAttribute="bottom" constant="30" id="Csq-i7-cdn"/>
-                                            <constraint firstItem="UNu-5X-tU8" firstAttribute="top" secondItem="fbU-YF-62q" secondAttribute="top" constant="50" id="GjM-28-goB"/>
+                                            <constraint firstItem="UNu-5X-tU8" firstAttribute="top" secondItem="fbU-YF-62q" secondAttribute="top" constant="10" id="GjM-28-goB"/>
                                             <constraint firstAttribute="trailing" secondItem="UNu-5X-tU8" secondAttribute="trailing" id="IPj-06-f5x"/>
                                             <constraint firstItem="8Sx-9f-ZrT" firstAttribute="leading" secondItem="fbU-YF-62q" secondAttribute="leading" id="eip-xu-a6z"/>
                                             <constraint firstItem="UNu-5X-tU8" firstAttribute="leading" secondItem="fbU-YF-62q" secondAttribute="leading" id="kDR-Jr-DuP"/>
@@ -522,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2e-Jp-H7n" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="133"/>
+            <point key="canvasLocation" x="239" y="507"/>
         </scene>
     </scenes>
 </document>

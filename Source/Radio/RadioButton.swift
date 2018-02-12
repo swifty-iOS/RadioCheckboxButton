@@ -51,7 +51,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     public weak var delegate: RadioButtonDelegate?
     
     public var radioCircle = RadioButtonCircleHeight() {
-        didSet { setup() }
+        didSet { setupLayer() }
     }
     
     public var radioButtonColor: RadioButtonColor! {
