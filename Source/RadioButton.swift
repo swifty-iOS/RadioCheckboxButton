@@ -14,35 +14,20 @@ public struct RadioButtonCircleHeight {
     let lineWidth: CGFloat
     let contentPadding: CGFloat
     
-    init() {
-        outer = 16
-        inner = 7
-        lineWidth = 2
-        contentPadding = 6
-    }
-    
-    init(outerCircle: CGFloat, innerCircle: CGFloat) {
+    init(outerCircle: CGFloat = 16, innerCircle: CGFloat = 7, outerCircleBorder: CGFloat = 2, contentPadding: CGFloat = 6) {
         self.outer = outerCircle
         self.inner = innerCircle
-        lineWidth = 2
-        contentPadding = 6
-    }
-    
-    init(outerCircle: CGFloat, innerCircle: CGFloat, outerCircleBorder: CGFloat) {
-        outer = outerCircle
-        inner = innerCircle
-        lineWidth = outerCircleBorder
-        contentPadding = 6
-        
-    }
-    
-    init(outerCircle: CGFloat, innerCircle: CGFloat, outerCircleBorder: CGFloat, contentPadding: CGFloat) {
-        outer = outerCircle
-        inner = innerCircle
-        lineWidth = outerCircleBorder
+        self.lineWidth = outerCircleBorder
         self.contentPadding = contentPadding
     }
     
+    init(outerCircle: CGFloat, innerCircle: CGFloat) {
+        self.init(outerCircle: outerCircle, innerCircle: innerCircle, outerCircleBorder: 2, contentPadding: 6)
+    }
+    
+    init(outerCircle: CGFloat, innerCircle: CGFloat, outerCircleBorder: CGFloat) {
+        self.init(outerCircle: outerCircle, innerCircle: innerCircle, outerCircleBorder: outerCircleBorder, contentPadding: 6)
+    }
 }
 
 public struct RadioButtonColor {
@@ -50,17 +35,14 @@ public struct RadioButtonColor {
     let inactive: UIColor
 }
 
-public protocol RadioButtonSelectionDelegate: RadioButtonDelegate {
+public protocol RadioButtonDelegate: class {
+    
     func radioButtonDidSelect(_ button: RadioButton)
-}
-
-public protocol RadioButtonDeselectionDelegate: RadioButtonDelegate {
     func radioButtonDidDeselect(_ button: RadioButton)
+    
 }
 
-public protocol RadioButtonDelegate: class { }
-
-public class RadioButton: UIButton {
+public class RadioButton: RadioAndCheckboxButton {
     
     private var outerLayer = CAShapeLayer()
     private var innerLayer = CAShapeLayer()
@@ -79,126 +61,57 @@ public class RadioButton: UIButton {
         }
     }
     
-    @objc dynamic public var isActive = false {
-        didSet { 
-            updateRadioLayer()
-            callDelegate()
-        }
-    }
     
-    public var allowDeselection: Bool = false
+    override var allowDeselection: Bool { return false }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func setup() {
         radioButtonColor = RadioButtonColor(active: tintColor, inactive: UIColor.lightGray)
-        setup()
+        super.setup()
     }
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        radioButtonColor = RadioButtonColor(active: tintColor, inactive: UIColor.lightGray)
-        setup()
-    }
-    
-    public convenience init?(type buttonType: UIButtonType) {
-        return nil
-    }
-    
-    public func updateRadioLayer() {
-        if isActive { updateActiveRadioLayer() }
-        else { updateInactiveRadioLayer() }
-    }
-    
-    
-    private func setup() {
-        // Add action here
-        addTarget(self, action: #selector(selectionAction), for: .touchUpInside)
+    internal override func setupLayer() {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: radioCircle.outer + radioCircle.contentPadding, bottom: 0, right: 0)
-        contentHorizontalAlignment = .left
-        
-        setupLayer()
-        addObserverSizeChange()
-    }
-    
-    private func setupLayer() {
         // Add layer here
+        func addOuterLayer() {
+            outerLayer.removeFromSuperlayer()
+            outerLayer.strokeColor = radioButtonColor.active.cgColor
+            outerLayer.fillColor = UIColor.clear.cgColor
+            outerLayer.lineWidth = radioCircle.lineWidth
+            outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle).cgPath
+            layer.insertSublayer(outerLayer, at: 1)
+        }
+        
+        func addInnerLayer() {
+            innerLayer.removeFromSuperlayer()
+            innerLayer.fillColor = radioButtonColor.active.cgColor
+            innerLayer.strokeColor = UIColor.clear.cgColor
+            innerLayer.lineWidth = 0
+            innerLayer.path = UIBezierPath.innerCircle(rect: bounds, circle: radioCircle).cgPath
+            layer.insertSublayer(innerLayer, at: 0)
+        }
+        
         addOuterLayer()
         addInnerLayer()
-        updateRadioLayer()
-        
+        super.setupLayer()
     }
     
-    @objc internal func selectionAction(_ sender: RadioButton) {
-        // If toggle enable, change selection state
-        if allowDeselection {
-            isActive = !isActive
-            
-        } else if !isActive {
-            isActive = true
-        }
-    }
-    
-}
-
-// frame change handler
-extension RadioButton {
-    
-    private func addObserverSizeChange() {
-        sizeChangeObserver = observe(\RadioButton.center, changeHandler: sizeChangeObseveHandler)
-    }
-    
-    private func sizeChangeObseveHandler(_ object: RadioButton, _ change: NSKeyValueObservedChange<CGPoint>) {
-        setupLayer()
-    }
-    
-}
-
-// MARK: - Delegate calling
-private extension RadioButton {
-    
-    private func callDelegate() {
+    internal override func callDelegate() {
         if isActive {
-            (delegate as? RadioButtonSelectionDelegate)?.radioButtonDidSelect(self)
+            delegate?.radioButtonDidSelect(self)
         } else {
-            (delegate as? RadioButtonDeselectionDelegate)?.radioButtonDidDeselect(self)
+            delegate?.radioButtonDidDeselect(self)
         }
     }
-}
-
-// MARK:- Adding radio layer
-private extension RadioButton {
     
-    private func addOuterLayer() {
-        outerLayer.removeFromSuperlayer()
-        outerLayer.strokeColor = radioButtonColor.active.cgColor
-        outerLayer.fillColor = UIColor.clear.cgColor
-        outerLayer.lineWidth = radioCircle.lineWidth
-        outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle).cgPath
-        layer.insertSublayer(outerLayer, at: 1)
-    }
-    
-    private func addInnerLayer() {
-        innerLayer.removeFromSuperlayer()
-        innerLayer.fillColor = radioButtonColor.active.cgColor
-        innerLayer.strokeColor = UIColor.clear.cgColor
-        innerLayer.lineWidth = 0
-        innerLayer.path = UIBezierPath.innerCircle(rect: bounds, circle: radioCircle).cgPath
-        layer.insertSublayer(innerLayer, at: 0)
-    }
-    
-}
-
-//MARK:- Updating current state of Radio button
-private extension RadioButton {
-    
-    private func updateActiveRadioLayer() {
+    override func updateActiveLayer() {
+        super.updateActiveLayer()
         innerLayer.position = .zero
         innerLayer.transform = CATransform3DIdentity
         outerLayer.strokeColor = radioButtonColor.active.cgColor
-        
     }
     
-    private func updateInactiveRadioLayer() {
+    override func updateInactiveLayer() {
+        super.updateInactiveLayer()
         guard let rect = self.innerLayer.path?.boundingBox else { return }
         let point = CGPoint(x: rect.midX, y: rect.midY)
         innerLayer.position = point

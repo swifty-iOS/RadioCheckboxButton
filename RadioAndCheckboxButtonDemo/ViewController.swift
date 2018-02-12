@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 //        viewGroup2.setEachRadioButtonCircle { _ in
 //            return RadioButtonCircleHeight.init(outerCircle: 10, innerCircle: 5, outerCircleBorder: 1)
 //        }
-        viewGroup2.buttonContainer.allowMultiSelection = true
+    
     }
     
     func setupGroup3() {
@@ -44,11 +44,6 @@ class ViewController: UIViewController {
         optionBG3.delegate = self
         group3Container.addButtons([optionAG3, optionBG3, optionCG3])
         group3Container.selectedButton = optionBG3
-        
-        // Enable toggling
-        optionAG3.allowDeselection = true
-        optionBG3.allowDeselection = true
-        optionCG3.allowDeselection = true
         
         // Set cutsom color for each button
         optionAG3.radioButtonColor = RadioButtonColor(active: UIColor.red, inactive: optionAG3.tintColor)
@@ -70,7 +65,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: RadioButtonSelectionDelegate, RadioButtonDeselectionDelegate {
+extension ViewController: RadioButtonDelegate {
     
     func radioButtonDidSelect(_ button: RadioButton) {
         print("Select: ", button.title(for: .normal)!)

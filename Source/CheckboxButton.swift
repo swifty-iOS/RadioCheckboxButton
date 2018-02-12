@@ -15,17 +15,17 @@ public struct CheckboxLine {
     let checkmarkLineWidth: CGFloat
     let padding: CGFloat
     
-    init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 5) {
+    init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 6) {
         self.checkBoxHeight = checkBoxHeight
         self.checkmarkLineWidth = checkmarkLineWidth
         self.padding = padding
     }
     
-    init(checkmarkLineWidth: CGFloat, padding: CGFloat = 5) {
+    init(checkmarkLineWidth: CGFloat, padding: CGFloat = 6) {
         self.init(checkBoxHeight: 18, checkmarkLineWidth: checkmarkLineWidth, padding: padding)
     }
     
-    init(padding: CGFloat = 5) {
+    init(padding: CGFloat = 6) {
         self.init(checkmarkLineWidth: -1, padding: padding)
     }
     
@@ -43,6 +43,13 @@ public struct CheckBoxColor {
     
 }
 
+public protocol CheckboxButtonDelegate: class {
+ 
+    func chechboxButtonDidSelect(_ button: CheckboxButton)
+    func chechboxButtonDidDeselect(_ button: CheckboxButton)
+
+}
+
 public class CheckboxButton: RadioAndCheckboxButton {
     
     private var outerLayer = CAShapeLayer()
@@ -51,7 +58,7 @@ public class CheckboxButton: RadioAndCheckboxButton {
     // Make sure color did should not call while setting internal
     private var radioButtonColorDidSetCall = false
     
-    public weak var delegate: RadioButtonDelegate?
+    public weak var delegate: CheckboxButtonDelegate?
     
     public var checkBoxColor: CheckBoxColor! {
         didSet {
@@ -74,9 +81,7 @@ public class CheckboxButton: RadioAndCheckboxButton {
         }
     }
     
-    override var allowDeselection: Bool {
-        return true
-    }
+    override var allowDeselection: Bool { return true }
     
     override func setup() {
         checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.white, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
@@ -115,6 +120,15 @@ public class CheckboxButton: RadioAndCheckboxButton {
         checkMarkLayer.fillColor = UIColor.clear.cgColor
         
         super.setupLayer()
+    }
+    
+    override func callDelegate() {
+        super.callDelegate()
+        if isActive {
+            delegate?.chechboxButtonDidSelect(self)
+        } else {
+            delegate?.chechboxButtonDidDeselect(self)
+        }
     }
     
     internal override func updateActiveLayer() {

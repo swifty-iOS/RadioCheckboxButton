@@ -23,19 +23,7 @@ public class RadioButtonGroupContainer<T> where T: RadioButton {
             radioButtons.forEach { $0.value?.delegate = radioButtonDelegate }
         }
     }
-    
-    public var allowMultiSelection: Bool = false {
-        didSet {
-            // Delect all button
-            radioButtons.forEach {
-                $0.value?.allowDeselection = allowMultiSelection
-                if !allowMultiSelection {
-                     $0.value?.isActive = false
-                }
-            }
-        }
-    }
-    
+        
     public var radioButtonColor: RadioButtonColor? {
         didSet {
             if radioButtonColor != nil {
@@ -71,7 +59,7 @@ public class RadioButtonGroupContainer<T> where T: RadioButton {
     }
     
     private func selectionChangeObserver(_ button: T, _ change: NSKeyValueObservedChange<Bool>) {
-        if !allowMultiSelection, button.isActive {
+        if button.isActive {
             // Deselect on selected button excepting current selected button
             radioButtons.first { $0.value != button && $0.value?.isActive == true }?.value?.isActive = false
         }
@@ -103,17 +91,7 @@ public class RadioButtonGroupContainer<T> where T: RadioButton {
             each.value?.radioCircle = body(button)
         }
     }
-    
-    public func setEachRadioButtonDeselection(_ body: (RadioButton) -> Bool) {
-        if allowMultiSelection {
-            print("Radio Button Conationer: Mutli selection is ON. Please disable multiple to use this feature.")
-        }
-        for each in radioButtons {
-            guard let button = each.value else { continue }
-            each.value?.allowDeselection =  allowMultiSelection ? allowMultiSelection : body(button)
-        }
-    }
-    
+        
     // Free up radio button which are no more available
     internal func compact() {
         

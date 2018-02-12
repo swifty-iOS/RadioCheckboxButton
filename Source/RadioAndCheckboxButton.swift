@@ -20,7 +20,7 @@ public class RadioAndCheckboxButton: UIButton {
     @objc dynamic public var isActive = false {
         didSet {
             updateSelectionState()
-            //   callDelegate()
+            callDelegate()
         }
     }
     
@@ -50,7 +50,7 @@ public class RadioAndCheckboxButton: UIButton {
         // If toggle enable, change selection state
         if allowDeselection {
             isActive = !isActive
-        } else {
+        } else if !isActive {
             isActive = true
         }
     }
@@ -70,6 +70,9 @@ public class RadioAndCheckboxButton: UIButton {
     internal func updateActiveLayer() { }
     
     internal func updateInactiveLayer() { }
+    
+    internal func callDelegate() { }
+    
 }
 
 //MARK:- frame change handler
