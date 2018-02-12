@@ -6,4 +6,4 @@ Radio button and group radio button iOS
 ![Image](Images/Image1.png) ![Image](Images/Image2.png) 
 
 ### RadioButton
-![Image](Images/Image3.png) ![Image](Images/Image4.png)
+![Image](Images/Image3.png) ![Image](Images/image4.png)
