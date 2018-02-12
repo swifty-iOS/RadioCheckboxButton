@@ -119,9 +119,9 @@
 		139B8D27200B69E300507D9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				139B11A32031E58E0036A1A7 /* Base */,
 				139B11A52031E5D20036A1A7 /* Checkbox */,
 				139B11A42031E5D20036A1A7 /* Radio */,
-				139B11A32031E58E0036A1A7 /* Base */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
