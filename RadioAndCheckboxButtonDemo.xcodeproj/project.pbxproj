@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1308453E2005D8B100C96F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308453D2005D8B100C96F1C /* AppDelegate.swift */; };
-		130845402005D8B100C96F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308453F2005D8B100C96F1C /* ViewController.swift */; };
+		130845402005D8B100C96F1C /* RadioSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308453F2005D8B100C96F1C /* RadioSampleViewController.swift */; };
 		130845432005D8B100C96F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130845412005D8B100C96F1C /* Main.storyboard */; };
 		130845452005D8B100C96F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130845442005D8B100C96F1C /* Assets.xcassets */; };
 		130845482005D8B100C96F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130845462005D8B100C96F1C /* LaunchScreen.storyboard */; };
-		13135C932006F1E300B20121 /* LoadingIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13135C922006F1E300B20121 /* LoadingIndicatorButton.swift */; };
 		138721A2203051AF00652028 /* RadioCheckboxBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138721A1203051AF00652028 /* RadioCheckboxBaseButton.swift */; };
 		138721A42030524100652028 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138721A32030524100652028 /* CheckboxButton.swift */; };
 		139B11A12031DB390036A1A7 /* RadioCheckboxBaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11A02031DB390036A1A7 /* RadioCheckboxBaseContainer.swift */; };
+		139B11A82031E6A10036A1A7 /* CheckboxButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11A62031E6A10036A1A7 /* CheckboxButtonContainer.swift */; };
+		139B11A92031E6A10036A1A7 /* CheckboxButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11A72031E6A10036A1A7 /* CheckboxButtonContainerView.swift */; };
+		139B11AB2031E8EA0036A1A7 /* CheckboxSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11AA2031E8EA0036A1A7 /* CheckboxSampleViewController.swift */; };
 		139B8D2B200B69E300507D9B /* RadioButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D28200B69E300507D9B /* RadioButtonContainerView.swift */; };
 		139B8D2C200B69E300507D9B /* RadioButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D29200B69E300507D9B /* RadioButtonContainer.swift */; };
 		139B8D2D200B69E300507D9B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B8D2A200B69E300507D9B /* RadioButton.swift */; };
@@ -24,15 +26,17 @@
 /* Begin PBXFileReference section */
 		1308453A2005D8B100C96F1C /* RadioAndCheckboxButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAndCheckboxButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1308453D2005D8B100C96F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1308453F2005D8B100C96F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1308453F2005D8B100C96F1C /* RadioSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSampleViewController.swift; sourceTree = "<group>"; };
 		130845422005D8B100C96F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		130845442005D8B100C96F1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		130845472005D8B100C96F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		130845492005D8B100C96F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13135C922006F1E300B20121 /* LoadingIndicatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorButton.swift; sourceTree = "<group>"; };
 		138721A1203051AF00652028 /* RadioCheckboxBaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCheckboxBaseButton.swift; sourceTree = "<group>"; };
 		138721A32030524100652028 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		139B11A02031DB390036A1A7 /* RadioCheckboxBaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCheckboxBaseContainer.swift; sourceTree = "<group>"; };
+		139B11A62031E6A10036A1A7 /* CheckboxButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButtonContainer.swift; sourceTree = "<group>"; };
+		139B11A72031E6A10036A1A7 /* CheckboxButtonContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButtonContainerView.swift; sourceTree = "<group>"; };
+		139B11AA2031E8EA0036A1A7 /* CheckboxSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxSampleViewController.swift; sourceTree = "<group>"; };
 		139B8D28200B69E300507D9B /* RadioButtonContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonContainerView.swift; sourceTree = "<group>"; };
 		139B8D29200B69E300507D9B /* RadioButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonContainer.swift; sourceTree = "<group>"; };
 		139B8D2A200B69E300507D9B /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 		130845312005D8B100C96F1C = {
 			isa = PBXGroup;
 			children = (
+				139B8D27200B69E300507D9B /* Source */,
 				1308453C2005D8B100C96F1C /* RadioAndCheckboxButtonDemo */,
 				1308453B2005D8B100C96F1C /* Products */,
 			);
@@ -68,10 +73,9 @@
 		1308453C2005D8B100C96F1C /* RadioAndCheckboxButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				139B8D27200B69E300507D9B /* Source */,
 				1308453D2005D8B100C96F1C /* AppDelegate.swift */,
-				1308453F2005D8B100C96F1C /* ViewController.swift */,
-				13135C922006F1E300B20121 /* LoadingIndicatorButton.swift */,
+				1308453F2005D8B100C96F1C /* RadioSampleViewController.swift */,
+				139B11AA2031E8EA0036A1A7 /* CheckboxSampleViewController.swift */,
 				130845412005D8B100C96F1C /* Main.storyboard */,
 				130845442005D8B100C96F1C /* Assets.xcassets */,
 				130845462005D8B100C96F1C /* LaunchScreen.storyboard */,
@@ -80,15 +84,41 @@
 			path = RadioAndCheckboxButtonDemo;
 			sourceTree = "<group>";
 		};
-		139B8D27200B69E300507D9B /* Source */ = {
+		139B11A32031E58E0036A1A7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				138721A1203051AF00652028 /* RadioCheckboxBaseButton.swift */,
 				139B11A02031DB390036A1A7 /* RadioCheckboxBaseContainer.swift */,
-				138721A32030524100652028 /* CheckboxButton.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		139B11A42031E5D20036A1A7 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
 				139B8D2A200B69E300507D9B /* RadioButton.swift */,
 				139B8D29200B69E300507D9B /* RadioButtonContainer.swift */,
 				139B8D28200B69E300507D9B /* RadioButtonContainerView.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		139B11A52031E5D20036A1A7 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				138721A32030524100652028 /* CheckboxButton.swift */,
+				139B11A62031E6A10036A1A7 /* CheckboxButtonContainer.swift */,
+				139B11A72031E6A10036A1A7 /* CheckboxButtonContainerView.swift */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		139B8D27200B69E300507D9B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				139B11A52031E5D20036A1A7 /* Checkbox */,
+				139B11A42031E5D20036A1A7 /* Radio */,
+				139B11A32031E58E0036A1A7 /* Base */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -166,12 +196,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				139B8D2B200B69E300507D9B /* RadioButtonContainerView.swift in Sources */,
-				13135C932006F1E300B20121 /* LoadingIndicatorButton.swift in Sources */,
 				138721A42030524100652028 /* CheckboxButton.swift in Sources */,
 				138721A2203051AF00652028 /* RadioCheckboxBaseButton.swift in Sources */,
+				139B11A82031E6A10036A1A7 /* CheckboxButtonContainer.swift in Sources */,
 				139B11A12031DB390036A1A7 /* RadioCheckboxBaseContainer.swift in Sources */,
-				130845402005D8B100C96F1C /* ViewController.swift in Sources */,
+				130845402005D8B100C96F1C /* RadioSampleViewController.swift in Sources */,
 				139B8D2D200B69E300507D9B /* RadioButton.swift in Sources */,
+				139B11A92031E6A10036A1A7 /* CheckboxButtonContainerView.swift in Sources */,
+				139B11AB2031E8EA0036A1A7 /* CheckboxSampleViewController.swift in Sources */,
 				1308453E2005D8B100C96F1C /* AppDelegate.swift in Sources */,
 				139B8D2C200B69E300507D9B /* RadioButtonContainer.swift in Sources */,
 			);

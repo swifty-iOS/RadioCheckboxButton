@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RadioSampleViewController.swift
 //  RadioButtonDemo
 //
 //  Created by Manish on 10/01/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RadioSampleViewController: UIViewController {
     
     @IBOutlet weak var viewGroup1: RadioButtonContainerView!
     @IBOutlet weak var viewGroup2: RadioButtonContainerView!
@@ -27,22 +27,16 @@ class ViewController: UIViewController {
     }
     
     func setupGroup2() {
-        viewGroup2.buttonContainer.radioButtonDelegate = self
+        viewGroup2.buttonContainer.delegate = self
         viewGroup2.buttonContainer.setEachRadioButtonColor {
             return RadioButtonColor(active: $0.tintColor , inactive: $0.tintColor)
         }
-        // You can customize circle as well
-//        viewGroup2.setEachRadioButtonCircle { _ in
-//            return RadioButtonCircleHeight.init(outerCircle: 10, innerCircle: 5, outerCircleBorder: 1)
-//        }
-    
     }
     
     func setupGroup3() {
-        // Assign radio ration delegate if required
-        optionAG3.delegate = self
-        optionBG3.delegate = self
+        
         group3Container.addButtons([optionAG3, optionBG3, optionCG3])
+        group3Container.delegate = self
         group3Container.selectedButton = optionBG3
         
         // Set cutsom color for each button
@@ -65,7 +59,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: RadioButtonDelegate {
+extension RadioSampleViewController: RadioButtonDelegate {
     
     func radioButtonDidSelect(_ button: RadioButton) {
         print("Select: ", button.title(for: .normal)!)

@@ -10,37 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="G0J-Ib-cwr">
-            <objects>
-                <viewController id="kvJ-V3-c5A" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MPU-88-FMn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s43-9t-gF3" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                <rect key="frame" x="102" y="122" width="189" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CheckBox"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTf-pg-mPN" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
-                                <rect key="frame" x="90" y="300" width="120" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Radio"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="UiP-iA-8f0"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eyl-pf-is8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-653.60000000000002" y="116.49175412293854"/>
-        </scene>
-        <!--View Controller-->
+        <!--Radio Sample View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RadioSampleViewController" id="BYZ-38-t0r" customClass="RadioSampleViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +112,7 @@
                                                         <color key="tintColor" red="1" green="0.047722692679762257" blue="0.95164430571445546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Option C"/>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 2 (Using Group View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-8b-FtH">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 2 (Using Container View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-8b-FtH">
                                                         <rect key="frame" x="20" y="5" width="335" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -214,7 +187,7 @@
                                                         <color key="tintColor" red="0.51338217943021158" green="0.1026364170466646" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Option C"/>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 3 (Using Group Container)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-Gb-JOc">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 3 (Using Container)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-Gb-JOc">
                                                         <rect key="frame" x="20" y="5" width="335" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -294,6 +267,262 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="133.09859154929578"/>
+        </scene>
+        <!--Checkbox Sample View Controller-->
+        <scene sceneID="eWd-vA-9jo">
+            <objects>
+                <viewController storyboardIdentifier="CheckboxSampleViewController" id="lPS-xe-QPL" customClass="CheckboxSampleViewController" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9u-dV-TZN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-M9-zL4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-YF-62q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-5X-tU8" customClass="CheckboxButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="109.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Aq-b8X" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="69.5" width="111.5" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="xZj-Vt-Hpm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <state key="normal" title="Option A">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fS-1l-P9H" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="131.5" y="69.5" width="112" height="30"/>
+                                                        <state key="normal" title="Option B">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2q-VG-nWu" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="243.5" y="69.5" width="111.5" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Option C">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 1 (Using Group View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-gb-xfm">
+                                                        <rect key="frame" x="20" y="5" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default: Selected color as tintColor and Deselected color as while color with light gray border" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZp-aJ-PhV">
+                                                        <rect key="frame" x="20" y="30.5" width="335" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="3fS-1l-P9H" firstAttribute="width" secondItem="cMy-Aq-b8X" secondAttribute="width" id="8Kh-TN-5eE"/>
+                                                    <constraint firstItem="e8J-gb-xfm" firstAttribute="leading" secondItem="UNu-5X-tU8" secondAttribute="leading" constant="20" id="8Vj-PQ-eFM"/>
+                                                    <constraint firstItem="3fS-1l-P9H" firstAttribute="height" secondItem="cMy-Aq-b8X" secondAttribute="height" id="8mt-c8-6Op"/>
+                                                    <constraint firstItem="3fS-1l-P9H" firstAttribute="leading" secondItem="cMy-Aq-b8X" secondAttribute="trailing" id="CoT-b4-pdy"/>
+                                                    <constraint firstItem="cMy-Aq-b8X" firstAttribute="leading" secondItem="UNu-5X-tU8" secondAttribute="leading" constant="20" id="DX1-YN-3sJ"/>
+                                                    <constraint firstItem="U2q-VG-nWu" firstAttribute="width" secondItem="cMy-Aq-b8X" secondAttribute="width" id="ECC-Mu-ONc"/>
+                                                    <constraint firstItem="U2q-VG-nWu" firstAttribute="height" secondItem="cMy-Aq-b8X" secondAttribute="height" id="TYE-gK-35t"/>
+                                                    <constraint firstItem="e8J-gb-xfm" firstAttribute="top" secondItem="UNu-5X-tU8" secondAttribute="top" constant="5" id="UHf-FD-TNi"/>
+                                                    <constraint firstItem="GZp-aJ-PhV" firstAttribute="top" secondItem="e8J-gb-xfm" secondAttribute="bottom" constant="5" id="Wd6-pv-o0Q"/>
+                                                    <constraint firstItem="cMy-Aq-b8X" firstAttribute="top" secondItem="GZp-aJ-PhV" secondAttribute="bottom" constant="10" id="ZaS-O4-gvs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3fS-1l-P9H" secondAttribute="bottom" constant="10" id="Zo6-um-BBY"/>
+                                                    <constraint firstItem="GZp-aJ-PhV" firstAttribute="leading" secondItem="UNu-5X-tU8" secondAttribute="leading" constant="20" id="bLm-WO-k61"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U2q-VG-nWu" secondAttribute="trailing" constant="20" id="kX8-yI-mTq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="e8J-gb-xfm" secondAttribute="trailing" constant="20" id="rbm-qX-IxI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GZp-aJ-PhV" secondAttribute="trailing" constant="20" id="uuD-9H-imc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cMy-Aq-b8X" secondAttribute="bottom" constant="10" id="y44-fG-cdk"/>
+                                                    <constraint firstItem="U2q-VG-nWu" firstAttribute="leading" secondItem="3fS-1l-P9H" secondAttribute="trailing" id="yMA-gN-qC5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="U2q-VG-nWu" secondAttribute="bottom" constant="10" id="zkQ-Eu-hQA"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sx-9f-ZrT" customClass="CheckboxButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="189.5" width="375" height="215.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-8O-2kn" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="55.5" width="335" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="tintColor" red="0.89558500050000001" green="0.1439247253" blue="0.12749821550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option A"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WJ-Yo-qud" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="95.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="d4M-sb-C0x"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.022667623389999999" green="1" blue="0.1695448265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option B"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shu-4I-owT" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="135.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="FGJ-ji-xOi"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="1" green="0.047722692679999998" blue="0.95164430570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option C"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 2 (Using Container View)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20v-OO-tYE">
+                                                        <rect key="frame" x="20" y="5" width="335" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MO-ky-MNX" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="175.5" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="n1G-Lr-s2R"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.16182765730000001" green="0.13111155150000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option D"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customized: Selected and Deselected color as tintColor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-7g-OSD">
+                                                        <rect key="frame" x="20" y="31" width="335" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7WJ-Yo-qud" secondAttribute="trailing" constant="20" id="9QQ-3W-KCZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uPg-8O-2kn" secondAttribute="trailing" constant="20" id="BZR-GQ-ERv"/>
+                                                    <constraint firstItem="shu-4I-owT" firstAttribute="top" secondItem="7WJ-Yo-qud" secondAttribute="bottom" constant="10" id="Cj8-PU-8Uz"/>
+                                                    <constraint firstItem="7WJ-Yo-qud" firstAttribute="top" secondItem="uPg-8O-2kn" secondAttribute="bottom" constant="10" id="HGS-3Q-qwr"/>
+                                                    <constraint firstItem="uPg-8O-2kn" firstAttribute="top" secondItem="q3Q-7g-OSD" secondAttribute="bottom" constant="10" id="IXh-8m-dtt"/>
+                                                    <constraint firstItem="3MO-ky-MNX" firstAttribute="top" secondItem="shu-4I-owT" secondAttribute="bottom" constant="10" id="Lhu-EZ-iVg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="20v-OO-tYE" secondAttribute="trailing" constant="20" id="NLK-fT-vPC"/>
+                                                    <constraint firstItem="q3Q-7g-OSD" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="Ouk-WF-rcW"/>
+                                                    <constraint firstItem="shu-4I-owT" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="SSR-yE-6xY"/>
+                                                    <constraint firstItem="20v-OO-tYE" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="WdH-lO-40z"/>
+                                                    <constraint firstAttribute="trailing" secondItem="q3Q-7g-OSD" secondAttribute="trailing" constant="20" id="buq-Zr-A8z"/>
+                                                    <constraint firstItem="20v-OO-tYE" firstAttribute="top" secondItem="8Sx-9f-ZrT" secondAttribute="top" constant="5" id="d2i-kC-mor"/>
+                                                    <constraint firstItem="7WJ-Yo-qud" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="daH-S2-dTX"/>
+                                                    <constraint firstItem="uPg-8O-2kn" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="gX6-sp-gy9"/>
+                                                    <constraint firstItem="q3Q-7g-OSD" firstAttribute="top" secondItem="20v-OO-tYE" secondAttribute="bottom" constant="5" id="u8U-C0-oRg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="shu-4I-owT" secondAttribute="trailing" constant="20" id="xvl-ZN-jNl"/>
+                                                    <constraint firstItem="3MO-ky-MNX" firstAttribute="leading" secondItem="8Sx-9f-ZrT" secondAttribute="leading" constant="20" id="z5b-Ym-A07"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3MO-ky-MNX" secondAttribute="bottom" constant="10" id="zCP-gq-mZj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3MO-ky-MNX" secondAttribute="trailing" constant="20" id="zxz-Qz-mnw"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iip-r0-07i">
+                                                <rect key="frame" x="0.0" y="435" width="375" height="204"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh1-bK-s5Z" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="uz0-71-LX9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="tintColor" red="0.31591847979999998" green="0.81829905820000004" blue="0.89558500050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option A"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5m-Hi-5cA" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="124" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Q1L-74-Ewv"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="1" green="0.61731512550000001" blue="0.15413678140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option B"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KL5-dv-XV6" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="164" width="335" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="AO7-6j-0WL"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.51338217939999997" green="0.10263641699999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Option C"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group 3 (Using Container)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euc-ll-NKc">
+                                                        <rect key="frame" x="20" y="5" width="335" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omu-0m-kjx">
+                                                        <rect key="frame" x="20" y="31" width="335" height="43"/>
+                                                        <string key="text">Customized: Selected and Deselected color as any custom color combination. You can customize selection and deselection checkbox size.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.95478520060000005" green="0.95686274510000002" blue="0.76450413390000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="omu-0m-kjx" firstAttribute="leading" secondItem="iip-r0-07i" secondAttribute="leading" constant="20" id="2Qv-Wl-Uzp"/>
+                                                    <constraint firstItem="omu-0m-kjx" firstAttribute="top" secondItem="euc-ll-NKc" secondAttribute="bottom" constant="5" id="I3H-Vf-nhM"/>
+                                                    <constraint firstItem="euc-ll-NKc" firstAttribute="leading" secondItem="iip-r0-07i" secondAttribute="leading" constant="20" id="Ja3-8V-yyW"/>
+                                                    <constraint firstItem="KL5-dv-XV6" firstAttribute="top" secondItem="C5m-Hi-5cA" secondAttribute="bottom" constant="10" id="LB4-Oa-kK1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KL5-dv-XV6" secondAttribute="trailing" constant="20" id="QBw-Ed-euN"/>
+                                                    <constraint firstItem="oh1-bK-s5Z" firstAttribute="top" secondItem="omu-0m-kjx" secondAttribute="bottom" constant="10" id="Y2D-n6-FrC"/>
+                                                    <constraint firstItem="oh1-bK-s5Z" firstAttribute="leading" secondItem="iip-r0-07i" secondAttribute="leading" constant="20" id="agM-Ug-Vbo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="omu-0m-kjx" secondAttribute="trailing" constant="20" id="g6V-i0-kw1"/>
+                                                    <constraint firstItem="C5m-Hi-5cA" firstAttribute="top" secondItem="oh1-bK-s5Z" secondAttribute="bottom" constant="10" id="h6O-k6-KaO"/>
+                                                    <constraint firstItem="KL5-dv-XV6" firstAttribute="leading" secondItem="iip-r0-07i" secondAttribute="leading" constant="20" id="hac-W1-YgA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oh1-bK-s5Z" secondAttribute="trailing" constant="20" id="jVp-1C-cTg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KL5-dv-XV6" secondAttribute="bottom" constant="10" id="luv-Pn-ydE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C5m-Hi-5cA" secondAttribute="trailing" constant="20" id="sVx-Aq-Wdq"/>
+                                                    <constraint firstItem="C5m-Hi-5cA" firstAttribute="leading" secondItem="iip-r0-07i" secondAttribute="leading" constant="20" id="uVv-EW-PyD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="euc-ll-NKc" secondAttribute="trailing" constant="20" id="ubq-65-gll"/>
+                                                    <constraint firstItem="euc-ll-NKc" firstAttribute="top" secondItem="iip-r0-07i" secondAttribute="top" constant="5" id="y2c-Qs-Wyo"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8Sx-9f-ZrT" secondAttribute="trailing" id="57i-n0-Hqg"/>
+                                            <constraint firstItem="8Sx-9f-ZrT" firstAttribute="top" secondItem="UNu-5X-tU8" secondAttribute="bottom" constant="30" id="Csq-i7-cdn"/>
+                                            <constraint firstItem="UNu-5X-tU8" firstAttribute="top" secondItem="fbU-YF-62q" secondAttribute="top" constant="50" id="GjM-28-goB"/>
+                                            <constraint firstAttribute="trailing" secondItem="UNu-5X-tU8" secondAttribute="trailing" id="IPj-06-f5x"/>
+                                            <constraint firstItem="8Sx-9f-ZrT" firstAttribute="leading" secondItem="fbU-YF-62q" secondAttribute="leading" id="eip-xu-a6z"/>
+                                            <constraint firstItem="UNu-5X-tU8" firstAttribute="leading" secondItem="fbU-YF-62q" secondAttribute="leading" id="kDR-Jr-DuP"/>
+                                            <constraint firstAttribute="trailing" secondItem="iip-r0-07i" secondAttribute="trailing" id="oKs-v0-6XI"/>
+                                            <constraint firstItem="iip-r0-07i" firstAttribute="top" secondItem="8Sx-9f-ZrT" secondAttribute="bottom" constant="30" id="pFd-oD-4mU"/>
+                                            <constraint firstAttribute="bottom" secondItem="iip-r0-07i" secondAttribute="bottom" constant="30" id="vsk-HU-tvE"/>
+                                            <constraint firstItem="iip-r0-07i" firstAttribute="leading" secondItem="fbU-YF-62q" secondAttribute="leading" id="zFu-DK-S8f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fbU-YF-62q" secondAttribute="bottom" id="7Ff-Se-QTI"/>
+                                    <constraint firstItem="fbU-YF-62q" firstAttribute="top" secondItem="lWk-M9-zL4" secondAttribute="top" id="Wre-em-bxx"/>
+                                    <constraint firstAttribute="trailing" secondItem="fbU-YF-62q" secondAttribute="trailing" id="ncz-GQ-cSU"/>
+                                    <constraint firstItem="fbU-YF-62q" firstAttribute="leading" secondItem="lWk-M9-zL4" secondAttribute="leading" id="znB-XS-5RA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lWk-M9-zL4" secondAttribute="bottom" id="EgW-VW-xGC"/>
+                            <constraint firstAttribute="trailing" secondItem="lWk-M9-zL4" secondAttribute="trailing" id="Ekl-Gs-qK5"/>
+                            <constraint firstItem="lWk-M9-zL4" firstAttribute="leading" secondItem="M9u-dV-TZN" secondAttribute="leading" id="LEO-oW-dm8"/>
+                            <constraint firstItem="fbU-YF-62q" firstAttribute="width" secondItem="M9u-dV-TZN" secondAttribute="width" id="UzB-lk-vfe"/>
+                            <constraint firstItem="lWk-M9-zL4" firstAttribute="top" secondItem="M9u-dV-TZN" secondAttribute="top" id="wfI-SM-b2O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3M8-Gu-NPV"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionAG3" destination="oh1-bK-s5Z" id="3Oy-2C-h0q"/>
+                        <outlet property="optionBG3" destination="C5m-Hi-5cA" id="DYv-9F-kxP"/>
+                        <outlet property="optionCG3" destination="KL5-dv-XV6" id="14n-bR-xmi"/>
+                        <outlet property="viewGroup2" destination="8Sx-9f-ZrT" id="pYl-u2-Nke"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2e-Jp-H7n" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="133"/>
         </scene>
     </scenes>
 </document>

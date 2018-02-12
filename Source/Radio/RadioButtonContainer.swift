@@ -14,9 +14,9 @@ import Foundation
 
 public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     
-    public weak var radioButtonDelegate: RadioButtonDelegate? {
+    public weak var delegate: RadioButtonDelegate? {
         didSet {
-            forEachButton { $0?.delegate = radioButtonDelegate }
+            forEachButton { $0?.delegate = delegate }
         }
     }
     
