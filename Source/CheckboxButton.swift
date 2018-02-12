@@ -50,7 +50,7 @@ public protocol CheckboxButtonDelegate: class {
 
 }
 
-public class CheckboxButton: RadioAndCheckboxButton {
+public class CheckboxButton: RadioCheckboxBaseButton {
     
     private var outerLayer = CAShapeLayer()
     private var checkMarkLayer = CAShapeLayer()

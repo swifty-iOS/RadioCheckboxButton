@@ -1,5 +1,5 @@
 //
-//  RadioButtonGroupView.swift
+//  RadioButtonContainerView.swift
 //  RadioButtonDemo
 //
 //  Created by Manish Bhande on 14/01/18.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-public class RadioButtonGroupView: UIView {
+public class RadioButtonContainerView: UIView {
     
-    private var _buttonContainer = RadioButtonGroupContainer()
+    private typealias Button = RadioButton
     
-    public var buttonContainer: RadioButtonGroupContainer<RadioButton> {
+    private var _buttonContainer = RadioButtonContainer()
+    
+    public var buttonContainer: RadioButtonContainer {
         return _buttonContainer
     }
     
@@ -37,14 +39,14 @@ public class RadioButtonGroupView: UIView {
     }
     
     public func addButton(_ view: UIView) {
-        if view is RadioButton {
-            buttonContainer.addButton(view as! RadioButton)
+        if view is Button {
+            buttonContainer.addButton(view as! Button)
         }
     }
     
     public func removeButton(_ view: UIView) {
-        if view is RadioButton {
-            buttonContainer.removeButton(view as! RadioButton)
+        if view is Button {
+            buttonContainer.removeButton(view as! Button)
         }
     }
     

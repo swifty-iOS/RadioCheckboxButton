@@ -1,5 +1,5 @@
 //
-//  RadioAndCheckboxButton.swift
+//  RadioCheckboxBaseButton.swift
 //  RadioAndCheckboxButtonDemo
 //
 //  Created by Manish Bhande on 11/02/18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class RadioAndCheckboxButton: UIButton {
+public class RadioCheckboxBaseButton: UIButton {
     
     private var sizeChangeObserver: NSKeyValueObservation?
     
@@ -76,13 +76,13 @@ public class RadioAndCheckboxButton: UIButton {
 }
 
 //MARK:- frame change handler
-extension RadioAndCheckboxButton {
+extension RadioCheckboxBaseButton {
     
     private func addObserverSizeChange() {
-        sizeChangeObserver = observe(\RadioAndCheckboxButton.center, changeHandler: sizeChangeObseveHandler)
+        sizeChangeObserver = observe(\RadioCheckboxBaseButton.center, changeHandler: sizeChangeObseveHandler)
     }
     
-    private func sizeChangeObseveHandler(_ object: RadioAndCheckboxButton, _ change: NSKeyValueObservedChange<CGPoint>) {
+    private func sizeChangeObseveHandler(_ object: RadioCheckboxBaseButton, _ change: NSKeyValueObservedChange<CGPoint>) {
         setupLayer()
     }
     

@@ -10,15 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var viewGroup1: RadioButtonGroupView!
-    @IBOutlet weak var viewGroup2: RadioButtonGroupView!
+    @IBOutlet weak var viewGroup1: RadioButtonContainerView!
+    @IBOutlet weak var viewGroup2: RadioButtonContainerView!
     @IBOutlet weak var viewGroup3: UIView!
     
     @IBOutlet weak var optionAG3: RadioButton!
     @IBOutlet weak var optionBG3: RadioButton!
     @IBOutlet weak var optionCG3: RadioButton!
     
-    var group3Container = RadioButtonGroupContainer()
+    var group3Container = RadioButtonContainer()
     
     override func viewDidLoad() {
         super.viewDidLoad()

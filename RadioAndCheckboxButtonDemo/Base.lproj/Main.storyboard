@@ -51,7 +51,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-rA-9FT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-8F-uwz" customClass="RadioButtonGroupView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-8F-uwz" customClass="RadioButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="109.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-Z7-Gqv" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
@@ -112,7 +112,7 @@
                                                     <constraint firstItem="dPj-ME-wGz" firstAttribute="height" secondItem="Iae-Z7-Gqv" secondAttribute="height" id="z76-cT-4sB"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB4-46-S4w" customClass="RadioButtonGroupView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KB4-46-S4w" customClass="RadioButtonContainerView" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="189.5" width="375" height="215.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-Kg-fVz" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">

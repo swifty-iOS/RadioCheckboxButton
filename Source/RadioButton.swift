@@ -42,7 +42,7 @@ public protocol RadioButtonDelegate: class {
     
 }
 
-public class RadioButton: RadioAndCheckboxButton {
+public class RadioButton: RadioCheckboxBaseButton {
     
     private var outerLayer = CAShapeLayer()
     private var innerLayer = CAShapeLayer()
