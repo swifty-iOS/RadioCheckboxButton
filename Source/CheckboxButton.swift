@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-// MARK: CheckboxLine
+// MARK: CheckboxLineStyle
 /// Struct to define Chebox style
-public struct CheckboxLine {
+public struct CheckboxLineStyle {
     
     let checkBoxHeight: CGFloat
     let checkmarkLineWidth: CGFloat
@@ -78,7 +78,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     }
     
     /// Apply checkbox line to gcustomize checkbox button layout
-    public var checkboxLine = CheckboxLine() {
+    public var checkboxLine = CheckboxLineStyle() {
         didSet {
             setupLayer()
         }
@@ -157,7 +157,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     }
     
 }
-//MARK:- CAShapeLayer Stroke animation
+// MARK:- CAShapeLayer Stroke animation
 private extension CAShapeLayer {
     
     func animateStrokeEnd(from: CGFloat, to: CGFloat, completion: ((Bool) -> Void)? = nil) {

@@ -11,17 +11,42 @@ import Foundation
 /// Hold all CheckboxButton button
 public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton> {
     
-    /// Checkbox delegate, will be assigned to all button added in container
+    /// Checkbox delegate will be assigned to all button added in container
     public weak var delegate: CheckboxButtonDelegate? {
         didSet {
             forEachButton { $0?.delegate = delegate }
         }
     }
     
-    /// Set color separate color style for each checkbox button added in conatainer
+    /// Overrideding for seeting delegate
+    @discardableResult
+    public override func addButton(_ button: Kind) -> Bool {
+        button.delegate = delegate
+        return super.addButton(button)
+    }
+    
+    /// Set common color for all button added in container
+    /// No guarantee for newly added buttons
+    public var checkboxButtonColor: CheckBoxColor? {
+        didSet {
+            guard let color = checkboxButtonColor else { return }
+            setEachCheckboxButtonColor { _ in return color}
+        }
+    }
+    
+    /// Set common radio circel style for all button added in container
+    /// No guarantee for newly added buttons
+    public var checkboxLineStyle: CheckboxLineStyle? {
+        didSet {
+            guard let style =  checkboxLineStyle else { return }
+            setEachCheckboxButtonLineStyle { _ in return style }
+        }
+    }
+    
+    /// Set separate color style for each checkbox button added in conatainer
     ///
     /// - Parameter body: (CheckboxButton) -> CheckBoxColor
-    public func setEachCheckboxButtonColor(_ body: (CheckboxButton) -> CheckBoxColor) {
+    public func setEachCheckboxButtonColor(_ body: (Kind) -> CheckBoxColor) {
         forEachButton {
             if let button = $0 {
                 button.checkBoxColor = body(button)
@@ -31,20 +56,13 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     
     /// Apply separate CheckboxLine style for each style added in container
     ///
-    /// - Parameter body: (CheckboxButton) -> CheckboxLine
-    public func setEachCheckboxButtonLine(_ body: (CheckboxButton) -> CheckboxLine) {
+    /// - Parameter body: (CheckboxButton) -> CheckboxLineStyle
+    public func setEachCheckboxButtonLineStyle(_ body: (Kind) -> CheckboxLineStyle) {
         forEachButton {
             if let button = $0 {
                 button.checkboxLine = body(button)
             }
         }
-    }
- 
-    /// Overrideding for seeting delegate
-    @discardableResult
-    public override func addButton(_ button: CheckboxButton) -> Bool {
-        button.delegate = delegate
-        return super.addButton(button)
     }
  
 }

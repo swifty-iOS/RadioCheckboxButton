@@ -91,7 +91,7 @@ public class RadioCheckboxBaseButton: UIButton {
     
 }
 
-//MARK:- frame change handler
+// MARK:- frame change handler
 extension RadioCheckboxBaseButton {
     
     private func addObserverSizeChange() {

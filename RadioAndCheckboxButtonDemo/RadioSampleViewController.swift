@@ -46,9 +46,9 @@ class RadioSampleViewController: UIViewController {
         optionCG3.radioButtonColor = RadioButtonColor(active: UIColor.magenta, inactive: UIColor.red)
         
         // Set up cirlce size here
-        optionAG3.radioCircle = RadioButtonCircleHeight.init(outerCircle: 10, innerCircle: 5, outerCircleBorder: 1)
-        optionBG3.radioCircle = RadioButtonCircleHeight.init(outerCircle: 25, innerCircle: 10, outerCircleBorder: 5, contentPadding: 20)
-        optionCG3.radioCircle = RadioButtonCircleHeight.init(outerCircle: 20, innerCircle: 20, outerCircleBorder: 5, contentPadding: 10)
+        optionAG3.radioCircle = RadioButtonCircleStyle.init(outerCircle: 10, innerCircle: 5, outerCircleBorder: 1)
+        optionBG3.radioCircle = RadioButtonCircleStyle.init(outerCircle: 25, innerCircle: 10, outerCircleBorder: 5, contentPadding: 20)
+        optionCG3.radioCircle = RadioButtonCircleStyle.init(outerCircle: 20, innerCircle: 20, outerCircleBorder: 5, contentPadding: 10)
         
     }
     

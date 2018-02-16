@@ -22,6 +22,8 @@ struct WeakRef<T: RadioCheckboxBaseButton> {
 
 public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     
+    public typealias Kind = T
+    
     /// Hold lsit of buttons of T type
     private var buttonContainer: [WeakRef<T>] = []
     
