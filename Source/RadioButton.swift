@@ -62,7 +62,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     }
     
     
-    override var allowDeselection: Bool { return false }
+    override internal var allowDeselection: Bool { return false }
     
     override func setup() {
         radioButtonColor = RadioButtonColor(active: tintColor, inactive: UIColor.lightGray)

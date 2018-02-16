@@ -74,6 +74,8 @@ public class RadioCheckboxBaseButton: UIButton {
     }
     
     /// Setup layer that will for Radio and Checkbox button
+    /// This method can be called mutliple times
+    /// Do the stuff by overriding, then call super class method
     internal func setupLayer() {
         updateSelectionState()
     }

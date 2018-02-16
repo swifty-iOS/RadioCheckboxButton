@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Struct to hold referce all buttons in continer
+/// Struct to hold weak reference of a button
 struct WeakRef<T: RadioCheckboxBaseButton> {
     
     private var selectionObservation: NSKeyValueObservation?
@@ -60,7 +60,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     }
     
     /// Get / set selected all buttons
-    internal var selectedButtons: [T] {
+    public var selectedButtons: [T] {
         
         get {
             var result = [T]()

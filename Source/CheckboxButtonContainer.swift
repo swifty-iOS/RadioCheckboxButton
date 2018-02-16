@@ -8,37 +8,19 @@
 
 import Foundation
 
-
-
-// MARK: GroupRadioButton Handling
-
+/// Hold all CheckboxButton button
 public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton> {
     
+    /// Checkbox delegate, will be assigned to all button added in container
     public weak var delegate: CheckboxButtonDelegate? {
         didSet {
             forEachButton { $0?.delegate = delegate }
         }
     }
     
-    public var radioButtonColor: RadioButtonColor? {
-        didSet {
-            if radioButtonColor != nil {
-                forEachButton { $0?.radioButtonColor = radioButtonColor }
-            }
-        }
-    }
-    
-    public var selectedButton: CheckboxButton? {
-        get { return selectedButtons.first }
-        set {
-            guard let button = newValue else {
-                deselectAll()
-                return
-            }
-            selectedButtons = [button]
-        }
-    }
-    
+    /// Set color separate color style for each checkbox button added in conatainer
+    ///
+    /// - Parameter body: (CheckboxButton) -> CheckBoxColor
     public func setEachCheckboxButtonColor(_ body: (CheckboxButton) -> CheckBoxColor) {
         forEachButton {
             if let button = $0 {
@@ -47,6 +29,9 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
         }
     }
     
+    /// Apply separate CheckboxLine style for each style added in container
+    ///
+    /// - Parameter body: (CheckboxButton) -> CheckboxLine
     public func setEachCheckboxButtonLine(_ body: (CheckboxButton) -> CheckboxLine) {
         forEachButton {
             if let button = $0 {
@@ -54,5 +39,12 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
             }
         }
     }
-    
+ 
+    /// Overrideding for seeting delegate
+    @discardableResult
+    public override func addButton(_ button: CheckboxButton) -> Bool {
+        button.delegate = delegate
+        return super.addButton(button)
+    }
+ 
 }

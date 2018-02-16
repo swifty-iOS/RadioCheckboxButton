@@ -8,12 +8,15 @@
 
 import UIKit
 
+/// View container that hold all CheckboxButton available as subview
 public class CheckboxButtonContainerView: UIView {
     
-    private typealias Button = CheckboxButton
+    public typealias ButtonType = CheckboxButton
     
     private var _buttonContainer = CheckboxButtonContainer()
     
+    /// Access button container for more features
+    /// You can not change buttonContainer
     public var buttonContainer: CheckboxButtonContainer {
         return _buttonContainer
     }
@@ -23,31 +26,37 @@ public class CheckboxButtonContainerView: UIView {
         
         // Load all Radio button
         let buttons = subviews
-        for button in buttons {
+        for case let button as ButtonType in buttons {
             addButton(button)
         }
     }
     
+    /// Ading subview in button conatiner if it is CheckboxButton
     public override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
-        addButton(subview)
+        guard let button = subview as? ButtonType else { return }
+        addButton(button)
     }
     
+    /// Removing CheckboxButton from container
     public override func willRemoveSubview(_ subview: UIView) {
         super.willRemoveSubview(subview)
-        removeButton(subview)
+        guard let button = subview as? ButtonType else { return }
+        removeButton(button)
     }
     
-    public func addButton(_ view: UIView) {
-        if view is Button {
-            buttonContainer.addButton(view as! Button)
-        }
+    /// Add button in container even if it is not added as subview in container view
+    ///
+    /// - Parameter button: CheckboxButton
+    public func addButton(_ button: ButtonType) {
+        buttonContainer.addButton(button)
     }
     
-    public func removeButton(_ view: UIView) {
-        if view is Button {
-            buttonContainer.removeButton(view as! Button)
-        }
+    /// Remove button from container. It will not remove from view. User removefromSuperview method delete button from view.
+    ///
+    /// - Parameter button: CheckboxButton
+    public func removeButton(_ button: ButtonType) {
+        buttonContainer.removeButton(button)
     }
     
 }

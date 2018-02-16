@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: CheckboxLine
+/// Struct to define Chebox style
 public struct CheckboxLine {
     
     let checkBoxHeight: CGFloat
@@ -34,6 +36,8 @@ public struct CheckboxLine {
     }
 }
 
+// MARK:- CheckBoxColor
+/// Define check box color
 public struct CheckBoxColor {
     
     let activeColor: UIColor
@@ -43,6 +47,8 @@ public struct CheckBoxColor {
     
 }
 
+// MARK:- CheckboxButtonDelegate
+/// Chebox delegates
 public protocol CheckboxButtonDelegate: class {
     
     func chechboxButtonDidSelect(_ button: CheckboxButton)
@@ -50,6 +56,7 @@ public protocol CheckboxButtonDelegate: class {
     
 }
 
+// MARK:- CheckboxButton
 public class CheckboxButton: RadioCheckboxBaseButton {
     
     private var outerLayer = CAShapeLayer()
@@ -60,6 +67,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     
     public weak var delegate: CheckboxButtonDelegate?
     
+    /// Set checkbox color to customise the buttons
     public var checkBoxColor: CheckBoxColor! {
         didSet {
             if radioButtonColorDidSetCall {
@@ -69,26 +77,26 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         }
     }
     
+    /// Apply checkbox line to gcustomize checkbox button layout
     public var checkboxLine = CheckboxLine() {
         didSet {
             setupLayer()
         }
     }
     
-    public var radioButtonColor: RadioButtonColor! {
-        didSet {
-            outerLayer.strokeColor = isActive ? radioButtonColor.active.cgColor : radioButtonColor.inactive.cgColor
-        }
+    /// Allow deselectiom of button
+    override internal var allowDeselection: Bool {
+        return true
     }
     
-    override var allowDeselection: Bool { return true }
-    
-    override func setup() {
+    /// Set default color of chebox
+    override internal func setup() {
         checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.clear, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
         super.setup()
         radioButtonColorDidSetCall = true
     }
     
+    /// Setup layer of check box
     override internal func setupLayer() {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: checkboxLine.checkBoxHeight + checkboxLine.padding, bottom: 0, right: 0)
         // Make inner later here
@@ -118,11 +126,14 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         checkMarkLayer.strokeColor = checkBoxColor.checkMarkColor.cgColor
         checkMarkLayer.path = path.cgPath
         checkMarkLayer.fillColor = UIColor.clear.cgColor
+        checkMarkLayer.removeFromSuperlayer()
         outerLayer.insertSublayer(checkMarkLayer, at: 0)
+        
         super.setupLayer()
     }
     
-    override func callDelegate() {
+    /// Delegate call
+    override internal func callDelegate() {
         super.callDelegate()
         if isActive {
             delegate?.chechboxButtonDidSelect(self)
@@ -131,23 +142,22 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         }
     }
     
-    internal override func updateActiveLayer() {
+    /// Update active layer and apply animation
+    override internal  func updateActiveLayer() {
+        checkMarkLayer.animateStrokeEnd(from: 0, to: 1)
         outerLayer.fillColor = checkBoxColor.activeColor.cgColor
         outerLayer.strokeColor = checkBoxColor.activeColor.cgColor
-        if checkMarkLayer.superlayer == nil {
-            outerLayer.insertSublayer(checkMarkLayer, at: 0)
-        }
-        checkMarkLayer.animateStrokeEnd(from: 0, to: 1)
     }
     
-    internal override func updateInactiveLayer() {
+    /// Update inactive layer apply animation
+    override internal func updateInactiveLayer() {
         checkMarkLayer.animateStrokeEnd(from: 1, to: 0)
         outerLayer.fillColor = checkBoxColor.inactiveColor.cgColor
         outerLayer.strokeColor = checkBoxColor.inactiveBorderColor.cgColor
     }
     
 }
-
+//MARK:- CAShapeLayer Stroke animation
 private extension CAShapeLayer {
     
     func animateStrokeEnd(from: CGFloat, to: CGFloat, completion: ((Bool) -> Void)? = nil) {
