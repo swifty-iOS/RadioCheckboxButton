@@ -11,16 +11,21 @@ import UIKit
 
 public class RadioCheckboxBaseButton: UIButton {
     
+    /// Oberver frame change to update style
     private var sizeChangeObserver: NSKeyValueObservation?
     
+    /// Allow delection for button useful in Check bok stype
     internal var allowDeselection: Bool {
         return false
     }
     
+    /// Keep the track of Selection and deselction
     @objc dynamic public var isActive = false {
         didSet {
-            updateSelectionState()
-            callDelegate()
+            if isActive != oldValue {
+                updateSelectionState()
+                callDelegate()
+            }
         }
     }
     
@@ -38,6 +43,7 @@ public class RadioCheckboxBaseButton: UIButton {
         return nil
     }
     
+    /// Setup intial things required
     internal func setup() {
         // Add action here
         addTarget(self, action: #selector(selectionAction), for: .touchUpInside)
@@ -46,7 +52,10 @@ public class RadioCheckboxBaseButton: UIButton {
         setupLayer()
     }
     
-    @objc internal func selectionAction(_ sender: RadioButton) {
+    /// Action handler of button for internal use
+    ///
+    /// - Parameter sender: RadioCheckboxBaseButton
+    @objc internal func selectionAction(_ sender: RadioCheckboxBaseButton) {
         // If toggle enable, change selection state
         if allowDeselection {
             isActive = !isActive
@@ -55,6 +64,7 @@ public class RadioCheckboxBaseButton: UIButton {
         }
     }
     
+    /// Update selection stage as button selected for deselected
     public func updateSelectionState() {
         if isActive {
             updateActiveLayer()
@@ -63,14 +73,18 @@ public class RadioCheckboxBaseButton: UIButton {
         }
     }
     
+    /// Setup layer that will for Radio and Checkbox button
     internal func setupLayer() {
         updateSelectionState()
     }
     
+    /// Update active layer as button is selected
     internal func updateActiveLayer() { }
     
+    /// Update inative later as button is deselected
     internal func updateInactiveLayer() { }
     
+    /// call delegate as button selection state changes
     internal func callDelegate() { }
     
 }
