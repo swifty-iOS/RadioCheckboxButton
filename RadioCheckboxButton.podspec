@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name         = "MBPickerView"
+  s.name         = "RadioCheckboxButton"
   s.version      = "1.0"
-  s.summary      = "MBPickerView help you to creat Horizontal Picker View similar ot UIPcikerView"
+  s.summary      = "RadioCheckboxButton help you create Radio and Checkbox. It also help you group the Radio or Checkbox buttons"
   s.homepage     = "https://github.com/swifty-iOS/RadioCheckboxButton"
   s.license      = "MIT"
   s.author       = { "Swifty-iOS" => "manishej004@gmail.com" }
