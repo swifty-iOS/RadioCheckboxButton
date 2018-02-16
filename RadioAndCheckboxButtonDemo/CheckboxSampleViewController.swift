@@ -38,7 +38,7 @@ class CheckboxSampleViewController: UIViewController {
     }
     
     func setupGroup3() {
-        group3Container.addButtons([optionAG3, optionBG3, optionBG3])
+        group3Container.addButtons([optionAG3, optionBG3, optionCG3])
         group3Container.delegate = self
         
         group3Container.selectedButtons = [optionBG3]

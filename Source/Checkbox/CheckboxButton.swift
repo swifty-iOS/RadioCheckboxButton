@@ -44,10 +44,10 @@ public struct CheckBoxColor {
 }
 
 public protocol CheckboxButtonDelegate: class {
- 
+    
     func chechboxButtonDidSelect(_ button: CheckboxButton)
     func chechboxButtonDidDeselect(_ button: CheckboxButton)
-
+    
 }
 
 public class CheckboxButton: RadioCheckboxBaseButton {
@@ -84,7 +84,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     override var allowDeselection: Bool { return true }
     
     override func setup() {
-        checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.white, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
+        checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.clear, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
         super.setup()
         radioButtonColorDidSetCall = true
     }
@@ -118,7 +118,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         checkMarkLayer.strokeColor = checkBoxColor.checkMarkColor.cgColor
         checkMarkLayer.path = path.cgPath
         checkMarkLayer.fillColor = UIColor.clear.cgColor
-        
+        outerLayer.insertSublayer(checkMarkLayer, at: 0)
         super.setupLayer()
     }
     
@@ -132,25 +132,30 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     }
     
     internal override func updateActiveLayer() {
-        checkMarkLayer.removeFromSuperlayer()
         outerLayer.fillColor = checkBoxColor.activeColor.cgColor
         outerLayer.strokeColor = checkBoxColor.activeColor.cgColor
-        outerLayer.insertSublayer(checkMarkLayer, at: 0)
-        animate()
+        if checkMarkLayer.superlayer == nil {
+            outerLayer.insertSublayer(checkMarkLayer, at: 0)
+        }
+        checkMarkLayer.animateStrokeEnd(from: 0, to: 1)
     }
     
     internal override func updateInactiveLayer() {
-        checkMarkLayer.removeAllAnimations()
-        checkMarkLayer.removeFromSuperlayer()
+        checkMarkLayer.animateStrokeEnd(from: 1, to: 0)
         outerLayer.fillColor = checkBoxColor.inactiveColor.cgColor
         outerLayer.strokeColor = checkBoxColor.inactiveBorderColor.cgColor
     }
     
-    private func animate() {
-        let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 0.35
-        pathAnimation.fromValue = 0
-        pathAnimation.toValue = 1
-        checkMarkLayer.add(pathAnimation, forKey: "checkMarkLayer")
+}
+
+private extension CAShapeLayer {
+    
+    func animateStrokeEnd(from: CGFloat, to: CGFloat, completion: ((Bool) -> Void)? = nil) {
+        removeAllAnimations()
+        UIView.animate(withDuration: 0.35, animations: {
+            self.strokeEnd = from
+            self.strokeEnd = to
+        }, completion: completion)
     }
+    
 }
