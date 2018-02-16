@@ -157,15 +157,3 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     }
     
 }
-// MARK:- CAShapeLayer Stroke animation
-private extension CAShapeLayer {
-    
-    func animateStrokeEnd(from: CGFloat, to: CGFloat, completion: ((Bool) -> Void)? = nil) {
-        removeAllAnimations()
-        UIView.animate(withDuration: 0.35, animations: {
-            self.strokeEnd = from
-            self.strokeEnd = to
-        }, completion: completion)
-    }
-    
-}

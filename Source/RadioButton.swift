@@ -51,11 +51,17 @@ public protocol RadioButtonDelegate: class {
     
 }
 
+class RadioLayer: CAShapeLayer {
+    var activePath: CGPath?
+    var inactivePath: CGPath?
+    
+}
 // MARK:- RadioCheckboxBaseButton
 public class RadioButton: RadioCheckboxBaseButton {
     
     private var outerLayer = CAShapeLayer()
-    private var innerLayer = CAShapeLayer()
+    private var innerLayer = RadioLayer()
+    
     private var sizeChangeObserver: NSKeyValueObservation?
     
     public weak var delegate: RadioButtonDelegate?
@@ -95,16 +101,19 @@ public class RadioButton: RadioCheckboxBaseButton {
             outerLayer.lineWidth = radioCircle.lineWidth
             outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle).cgPath
             outerLayer.removeFromSuperlayer()
-            layer.insertSublayer(outerLayer, at: 1)
+            layer.insertSublayer(outerLayer, at: 0)
         }
         
         func addInnerLayer() {
+            guard let rect = outerLayer.path?.boundingBox else { return }
             innerLayer.fillColor = radioButtonColor.active.cgColor
             innerLayer.strokeColor = UIColor.clear.cgColor
             innerLayer.lineWidth = 0
-            innerLayer.path = UIBezierPath.innerCircle(rect: bounds, circle: radioCircle).cgPath
+            innerLayer.activePath = UIBezierPath.innerCircleActive(rect: rect, circle: radioCircle).cgPath
+            innerLayer.inactivePath = UIBezierPath.innerCircleInactive(rect: rect).cgPath
+            innerLayer.path = innerLayer.inactivePath
             innerLayer.removeFromSuperlayer()
-            layer.insertSublayer(innerLayer, at: 0)
+            outerLayer.insertSublayer(innerLayer, at: 0)
         }
         
         addOuterLayer()
@@ -124,19 +133,20 @@ public class RadioButton: RadioCheckboxBaseButton {
     /// Updating active layers
     override internal func updateActiveLayer() {
         super.updateActiveLayer()
-        innerLayer.position = .zero
-        innerLayer.transform = CATransform3DIdentity
         outerLayer.strokeColor = radioButtonColor.active.cgColor
+        guard let start = innerLayer.path, let end = innerLayer.activePath else { return }
+        innerLayer.animatePath(start: start, end: end)
+        innerLayer.path = end
+
     }
     
     /// Updating inactive layers
     override internal func updateInactiveLayer() {
         super.updateInactiveLayer()
-        guard let rect = self.innerLayer.path?.boundingBox else { return }
-        let point = CGPoint(x: rect.midX, y: rect.midY)
-        innerLayer.position = point
-        innerLayer.transform = CATransform3DMakeScale(0.00001, 0.00001, 1)
         outerLayer.strokeColor = radioButtonColor.inactive.cgColor
+        guard let start = innerLayer.path, let end = innerLayer.inactivePath else { return }
+        innerLayer.animatePath(start: start, end: end)
+        innerLayer.path = end
     }
     
 }
@@ -149,10 +159,18 @@ private extension UIBezierPath {
         return UIBezierPath(ovalIn: CGRect(origin: CGPoint(x: circle.lineWidth/2, y: rect.size.height/2-(circle.outer/2)), size: size))
     }
     
-    static func innerCircle(rect: CGRect, circle: RadioButtonCircleStyle) -> UIBezierPath {
+    static func innerCircleActive(rect: CGRect, circle: RadioButtonCircleStyle) -> UIBezierPath {
         let size = CGSize(width: circle.inner, height: circle.inner)
-        let xPos = circle.outer/2 - circle.inner/2 + circle.lineWidth/2
-        return UIBezierPath(ovalIn: CGRect(origin: CGPoint(x: xPos, y: rect.size.height/2-(circle.inner/2)), size: size))
+        let origon = CGPoint(x: rect.midX-size.width/2, y: rect.midY-size.height/2)
+        let frame = CGRect(origin: origon, size: size)
+        return UIBezierPath(ovalIn: frame)
+    }
+    
+    static func innerCircleInactive(rect: CGRect) -> UIBezierPath {
+        let size = CGSize.zero
+        let origon = CGPoint(x: rect.midX-size.width/2, y: rect.midY-size.height/2)
+        let frame = CGRect(origin: origon, size: size)
+        return UIBezierPath(ovalIn: frame)
     }
     
 }
