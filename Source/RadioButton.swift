@@ -1,6 +1,6 @@
 //
 //  RadioButton.swift
-//  RadioButtonDemo
+//  RadioCheckboxButton
 //
 //  Created by Manish on 10/01/2018.
 //  Copyright © 2018 Manish. All rights reserved.
