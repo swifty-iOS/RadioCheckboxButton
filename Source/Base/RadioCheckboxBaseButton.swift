@@ -79,10 +79,10 @@ public class RadioCheckboxBaseButton: UIButton {
 extension RadioCheckboxBaseButton {
     
     private func addObserverSizeChange() {
-        sizeChangeObserver = observe(\RadioCheckboxBaseButton.center, changeHandler: sizeChangeObseveHandler)
+        sizeChangeObserver = observe(\RadioCheckboxBaseButton.frame, changeHandler: sizeChangeObseveHandler)
     }
     
-    private func sizeChangeObseveHandler(_ object: RadioCheckboxBaseButton, _ change: NSKeyValueObservedChange<CGPoint>) {
+    private func sizeChangeObseveHandler(_ object: RadioCheckboxBaseButton, _ change: NSKeyValueObservedChange<CGRect>) {
         setupLayer()
     }
     
