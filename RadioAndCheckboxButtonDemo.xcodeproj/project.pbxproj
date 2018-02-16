@@ -87,41 +87,17 @@
 			path = RadioAndCheckboxButtonDemo;
 			sourceTree = "<group>";
 		};
-		139B11A32031E58E0036A1A7 /* Base */ = {
+		139B8D27200B69E300507D9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				138721A1203051AF00652028 /* RadioCheckboxBaseButton.swift */,
 				139B11A02031DB390036A1A7 /* RadioCheckboxBaseContainer.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		139B11A42031E5D20036A1A7 /* Radio */ = {
-			isa = PBXGroup;
-			children = (
-				139B8D2A200B69E300507D9B /* RadioButton.swift */,
-				139B8D29200B69E300507D9B /* RadioButtonContainer.swift */,
-				139B8D28200B69E300507D9B /* RadioButtonContainerView.swift */,
-			);
-			path = Radio;
-			sourceTree = "<group>";
-		};
-		139B11A52031E5D20036A1A7 /* Checkbox */ = {
-			isa = PBXGroup;
-			children = (
 				138721A32030524100652028 /* CheckboxButton.swift */,
 				139B11A62031E6A10036A1A7 /* CheckboxButtonContainer.swift */,
 				139B11A72031E6A10036A1A7 /* CheckboxButtonContainerView.swift */,
-			);
-			path = Checkbox;
-			sourceTree = "<group>";
-		};
-		139B8D27200B69E300507D9B /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				139B11A32031E58E0036A1A7 /* Base */,
-				139B11A52031E5D20036A1A7 /* Checkbox */,
-				139B11A42031E5D20036A1A7 /* Radio */,
+				139B8D2A200B69E300507D9B /* RadioButton.swift */,
+				139B8D29200B69E300507D9B /* RadioButtonContainer.swift */,
+				139B8D28200B69E300507D9B /* RadioButtonContainerView.swift */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
