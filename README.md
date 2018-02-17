@@ -8,9 +8,9 @@
 ![](Images/Checkbox2.gif)
 
 ### RadioButton
-######Default Style
+###### Default Style
 ![](Images/Radio1.gif)
-######Customized Style
+###### Customized Style
 ![](Images/Radio2.gif)
 
 ## Installation
@@ -50,12 +50,12 @@ Then, run the following command:
 $ pod install
 ```
 
-##How to Use
+## How to Use
 It is simple and easy to use. Just assign [RadioButton](Source/RadioButton/RadioButton.swift) or [CheckboxButton](Source/CheckboxButton/CheckboxButton.swift) to your button in XIB. You can advantage of grouping button using [RadioButtonContainerView] (Source/RadioButton/RadioButtonContainerView.swift) or [CheckboxButtonContainerView](Source/CheckboxButton/CheckboxButtonContainerView.swift). Add all the button in a UIView and assign respective container classes to view For more details please refer to [RadioAndCheckboxButtonDemo](./) example. It has **CheckboxButtonDelegate** and **RadioButtonDelegate** to get a callback of selection and deselection of a button.
 
 ## Customization
 For more customization please refer to [RadioAndCheckboxButtonDemo](./) example.
 
-##Licence
+## Licence
 
 **[MIT](LICENSE)**
