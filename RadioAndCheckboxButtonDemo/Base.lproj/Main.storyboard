@@ -88,7 +88,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="giv-tB-h1V"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Option A">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -146,6 +145,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-Kg-fVz" customClass="RadioButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="55.5" width="335" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="vRF-Zw-mr2"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="tintColor" red="0.89558500050000001" green="0.14392472532503919" blue="0.12749821546555234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Option A"/>
@@ -404,6 +406,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-8O-2kn" customClass="CheckboxButton" customModule="RadioAndCheckboxButtonDemo" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="55.5" width="335" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="mwZ-Br-6Cr"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="tintColor" red="0.89558500050000001" green="0.1439247253" blue="0.12749821550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Option A"/>

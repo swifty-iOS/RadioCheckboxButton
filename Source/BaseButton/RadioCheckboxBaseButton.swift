@@ -16,6 +16,7 @@ public enum RadioCheckboxStyle {
 }
 
 // MARK: - RadioCheckboxBaseButton
+@IBDesignable
 public class RadioCheckboxBaseButton: UIButton {
     
     /// Oberver frame change to update style
