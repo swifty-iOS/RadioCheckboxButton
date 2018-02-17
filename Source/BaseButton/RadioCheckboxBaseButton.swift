@@ -12,7 +12,7 @@ import UIKit
 // MARK: CheckboxStyle
 /// Define Checkbox style
 public enum RadioCheckboxStyle {
-    case rounded, square, circle
+    case rounded(radius: CGFloat), square, circle
 }
 
 // MARK: - RadioCheckboxBaseButton
@@ -51,7 +51,7 @@ public class RadioCheckboxBaseButton: UIButton {
     }
     
     /// Specify button style from CheckboxStyle
-    public var style: RadioCheckboxStyle = .square {
+    public var style: RadioCheckboxStyle = .circle {
         didSet {
             setupLayer()
         }

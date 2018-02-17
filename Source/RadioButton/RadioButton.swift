@@ -161,7 +161,7 @@ private extension UIBezierPath {
         switch style {
         case .circle: return UIBezierPath(roundedRect: newRect, cornerRadius: size.height/2)
         case .square: return UIBezierPath(rect: newRect)
-        case .rounded: return UIBezierPath(roundedRect: newRect, cornerRadius: 2)
+        case .rounded(let radius): return UIBezierPath(roundedRect: newRect, cornerRadius: radius)
         }
     }
     
@@ -172,7 +172,7 @@ private extension UIBezierPath {
         switch style {
         case .circle: return UIBezierPath(roundedRect: newRect, cornerRadius: size.height/2)
         case .square: return UIBezierPath(rect: newRect)
-        case .rounded: return UIBezierPath(roundedRect: newRect, cornerRadius: 2)
+        case .rounded(let radius): return UIBezierPath(roundedRect: newRect, cornerRadius: radius)
         }
         
     }

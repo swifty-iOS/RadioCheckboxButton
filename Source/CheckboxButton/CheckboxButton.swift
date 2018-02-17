@@ -93,7 +93,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     /// Set default color of chebox
     override internal func setup() {
         checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.clear, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
-        style = .rounded
+        style = .rounded(radius: 2)
         super.setup()
         radioButtonColorDidSetCall = true
     }
@@ -105,7 +105,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         let origin = CGPoint(x: 1, y: bounds.midY - (checkboxLine.checkBoxHeight/2))
         let rect = CGRect(origin: origin, size: checkboxLine.size)
         switch style {
-        case .rounded: outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: 2).cgPath
+        case .rounded(let radius): outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
         case .circle: outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: checkboxLine.size.height/2).cgPath
         case .square: outerLayer.path = UIBezierPath(rect: rect).cgPath
         }
