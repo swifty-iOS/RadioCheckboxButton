@@ -1,9 +1,15 @@
 # RadioAndCheckboxButton
 Radio button and group radio button iOS
 
-### Checkbox
+### CheckboxButton
+#### Default Style
+![](Images/Checkbox1.gif)
+#### Customized Style
+![](Images/Checkbox2.gif)
 
-![Image](Images/Image1.png) ![Image](Images/Image2.png) 
 
 ### RadioButton
-![Image](Images/Image3.png) ![Image](Images/image4.png)
+#### Default Style
+![](Images/Radio1.gif)
+#### Customized Style
+![](Images/Radio2.gif)
