@@ -75,7 +75,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     public var radioButtonColor: RadioButtonColor! {
         didSet {
             innerLayer.fillColor = radioButtonColor.active.cgColor
-            outerLayer.strokeColor = isActive ? radioButtonColor.active.cgColor : radioButtonColor.inactive.cgColor
+            outerLayer.strokeColor = isOn ? radioButtonColor.active.cgColor : radioButtonColor.inactive.cgColor
         }
     }
     
@@ -88,6 +88,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     /// Setting default color style
     override internal func setup() {
         radioButtonColor = RadioButtonColor(active: tintColor, inactive: UIColor.lightGray)
+        style = .circle
         super.setup()
     }
     
@@ -99,7 +100,7 @@ public class RadioButton: RadioCheckboxBaseButton {
             outerLayer.strokeColor = radioButtonColor.active.cgColor
             outerLayer.fillColor = UIColor.clear.cgColor
             outerLayer.lineWidth = radioCircle.lineWidth
-            outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle).cgPath
+            outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle, style: style).cgPath
             outerLayer.removeFromSuperlayer()
             layer.insertSublayer(outerLayer, at: 0)
         }
@@ -109,7 +110,7 @@ public class RadioButton: RadioCheckboxBaseButton {
             innerLayer.fillColor = radioButtonColor.active.cgColor
             innerLayer.strokeColor = UIColor.clear.cgColor
             innerLayer.lineWidth = 0
-            innerLayer.activePath = UIBezierPath.innerCircleActive(rect: rect, circle: radioCircle).cgPath
+            innerLayer.activePath = UIBezierPath.innerCircleActive(rect: rect, circle: radioCircle, style: style).cgPath
             innerLayer.inactivePath = UIBezierPath.innerCircleInactive(rect: rect).cgPath
             innerLayer.path = innerLayer.inactivePath
             innerLayer.removeFromSuperlayer()
@@ -123,7 +124,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     
     /// Call to delegate
     override internal func callDelegate() {
-        if isActive {
+        if isOn {
             delegate?.radioButtonDidSelect(self)
         } else {
             delegate?.radioButtonDidDeselect(self)
@@ -137,7 +138,7 @@ public class RadioButton: RadioCheckboxBaseButton {
         guard let start = innerLayer.path, let end = innerLayer.activePath else { return }
         innerLayer.animatePath(start: start, end: end)
         innerLayer.path = end
-
+        
     }
     
     /// Updating inactive layers
@@ -154,23 +155,32 @@ public class RadioButton: RadioCheckboxBaseButton {
 // MARK:- Radio button layer path
 private extension UIBezierPath {
     
-    static func outerCircle(rect: CGRect, circle: RadioButtonCircleStyle) -> UIBezierPath {
+    static func outerCircle(rect: CGRect, circle: RadioButtonCircleStyle, style: RadioCheckboxStyle) -> UIBezierPath {
         let size = CGSize(width: circle.outer, height: circle.outer)
-        return UIBezierPath(ovalIn: CGRect(origin: CGPoint(x: circle.lineWidth/2, y: rect.size.height/2-(circle.outer/2)), size: size))
+        let newRect = CGRect(origin: CGPoint(x: circle.lineWidth/2, y: rect.size.height/2-(circle.outer/2)), size: size)
+        switch style {
+        case .circle: return UIBezierPath(roundedRect: newRect, cornerRadius: size.height/2)
+        case .square: return UIBezierPath(rect: newRect)
+        case .rounded: return UIBezierPath(roundedRect: newRect, cornerRadius: 2)
+        }
     }
     
-    static func innerCircleActive(rect: CGRect, circle: RadioButtonCircleStyle) -> UIBezierPath {
+    static func innerCircleActive(rect: CGRect, circle: RadioButtonCircleStyle, style: RadioCheckboxStyle) -> UIBezierPath {
         let size = CGSize(width: circle.inner, height: circle.inner)
         let origon = CGPoint(x: rect.midX-size.width/2, y: rect.midY-size.height/2)
-        let frame = CGRect(origin: origon, size: size)
-        return UIBezierPath(ovalIn: frame)
+        let newRect = CGRect(origin: origon, size: size)
+        switch style {
+        case .circle: return UIBezierPath(roundedRect: newRect, cornerRadius: size.height/2)
+        case .square: return UIBezierPath(rect: newRect)
+        case .rounded: return UIBezierPath(roundedRect: newRect, cornerRadius: 2)
+        }
+        
     }
     
     static func innerCircleInactive(rect: CGRect) -> UIBezierPath {
-        let size = CGSize.zero
-        let origon = CGPoint(x: rect.midX-size.width/2, y: rect.midY-size.height/2)
-        let frame = CGRect(origin: origon, size: size)
-        return UIBezierPath(ovalIn: frame)
+        let origin = CGPoint(x: rect.midX, y: rect.midY)
+        let frame = CGRect(origin: origin, size: CGSize.zero)
+        return UIBezierPath(rect: frame)
     }
     
 }

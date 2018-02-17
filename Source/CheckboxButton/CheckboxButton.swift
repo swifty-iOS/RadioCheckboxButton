@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
+
 // MARK: CheckboxLineStyle
-/// Struct to define Chebox style
+/// Define Checkbox style
 public struct CheckboxLineStyle {
     
     let checkBoxHeight: CGFloat
@@ -92,6 +93,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     /// Set default color of chebox
     override internal func setup() {
         checkBoxColor = CheckBoxColor(activeColor: tintColor, inactiveColor: UIColor.clear, inactiveBorderColor: UIColor.lightGray, checkMarkColor: UIColor.white)
+        style = .rounded
         super.setup()
         radioButtonColorDidSetCall = true
     }
@@ -102,8 +104,11 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         // Make inner later here
         let origin = CGPoint(x: 1, y: bounds.midY - (checkboxLine.checkBoxHeight/2))
         let rect = CGRect(origin: origin, size: checkboxLine.size)
-        let outerPath = UIBezierPath(roundedRect: rect, cornerRadius: 3)
-        outerLayer.path = outerPath.cgPath
+        switch style {
+        case .rounded: outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: 2).cgPath
+        case .circle: outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: checkboxLine.size.height/2).cgPath
+        case .square: outerLayer.path = UIBezierPath(rect: rect).cgPath
+        }
         outerLayer.lineWidth = 2
         outerLayer.removeFromSuperlayer()
         layer.insertSublayer(outerLayer, at: 0)
@@ -113,13 +118,13 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         var yPos = rect.midY
         path.move(to: CGPoint(x: xPos, y: yPos))
         
-        var radius = (rect.width/2 - xPos)
+        var checkMarkLength = (rect.width/2 - xPos)
         
         [45.0, -45.0].forEach {
-            xPos = xPos + radius * CGFloat(cos($0 * .pi/180))
-            yPos = yPos + radius * CGFloat(sin($0 * .pi/180))
+            xPos = xPos + checkMarkLength * CGFloat(cos($0 * .pi/180))
+            yPos = yPos + checkMarkLength * CGFloat(sin($0 * .pi/180))
             path.addLine(to: CGPoint(x: xPos, y: yPos))
-            radius *= 2
+            checkMarkLength *= 2
         }
         
         checkMarkLayer.lineWidth = checkboxLine.checkmarkLineWidth == -1 ? max(checkboxLine.checkBoxHeight*0.1, 2) : checkboxLine.checkmarkLineWidth
@@ -135,7 +140,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     /// Delegate call
     override internal func callDelegate() {
         super.callDelegate()
-        if isActive {
+        if isOn {
             delegate?.chechboxButtonDidSelect(self)
         } else {
             delegate?.chechboxButtonDidDeselect(self)

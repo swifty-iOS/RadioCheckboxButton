@@ -42,11 +42,14 @@ class CheckboxSampleViewController: UIViewController {
         group3Container.delegate = self
         
         group3Container.selectedButtons = [optionBG3]
-        // set color and border for option A
+        
+        // set style, color and border for option A
+        optionAG3.style = .square
         optionAG3.checkBoxColor = CheckBoxColor(activeColor: UIColor.clear, inactiveColor: UIColor.red, inactiveBorderColor: UIColor.red, checkMarkColor: UIColor.magenta)
         optionAG3.checkboxLine = CheckboxLineStyle(checkBoxHeight: 25)
         
-        // set color for option B
+        // set style, color for option B
+        optionBG3.style = .circle
         optionBG3.checkBoxColor = CheckBoxColor(activeColor: UIColor.brown, inactiveColor: UIColor.yellow, inactiveBorderColor: UIColor.blue, checkMarkColor: UIColor.black)
         
         // set border for option C

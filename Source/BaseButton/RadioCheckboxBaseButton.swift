@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+// MARK: CheckboxStyle
+/// Define Checkbox style
+public enum RadioCheckboxStyle {
+    case rounded, square, circle
+}
+
+// MARK: - RadioCheckboxBaseButton
 public class RadioCheckboxBaseButton: UIButton {
     
     /// Oberver frame change to update style
@@ -20,9 +27,9 @@ public class RadioCheckboxBaseButton: UIButton {
     }
     
     /// Keep the track of Selection and deselction
-    @objc dynamic public var isActive = false {
+    @objc dynamic public var isOn = false {
         didSet {
-            if isActive != oldValue {
+            if isOn != oldValue {
                 updateSelectionState()
                 callDelegate()
             }
@@ -43,6 +50,13 @@ public class RadioCheckboxBaseButton: UIButton {
         return nil
     }
     
+    /// Specify button style from CheckboxStyle
+    public var style: RadioCheckboxStyle = .square {
+        didSet {
+            setupLayer()
+        }
+    }
+    
     /// Setup intial things required
     internal func setup() {
         // Add action here
@@ -58,15 +72,15 @@ public class RadioCheckboxBaseButton: UIButton {
     @objc internal func selectionAction(_ sender: RadioCheckboxBaseButton) {
         // If toggle enable, change selection state
         if allowDeselection {
-            isActive = !isActive
-        } else if !isActive {
-            isActive = true
+            isOn = !isOn
+        } else if !isOn {
+            isOn = true
         }
     }
     
     /// Update selection stage as button selected for deselected
     public func updateSelectionState() {
-        if isActive {
+        if isOn {
             updateActiveLayer()
         } else {
             updateInactiveLayer()

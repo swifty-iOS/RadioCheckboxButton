@@ -16,7 +16,7 @@ struct WeakRef<T: RadioCheckboxBaseButton> {
     
     init(_ value: T, handler: @escaping (T, NSKeyValueObservedChange<Bool>) -> Void) {
         self.value = value
-        selectionObservation = self.value?.observe(\T.isActive, changeHandler: handler)
+        selectionObservation = self.value?.observe(\T.isOn, changeHandler: handler)
     }
 }
 
@@ -58,7 +58,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     
     /// Deselect all buttons
     public func deselectAll() {
-        forEachButton { $0?.isActive = false }
+        forEachButton { $0?.isOn = false }
     }
     
     /// Get / set selected all buttons
@@ -67,7 +67,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
         get {
             var result = [T]()
             forEachButton { button in
-                if button != nil, button!.isActive {
+                if button != nil, button!.isOn {
                     result.append(button!)
                 }
             }
@@ -78,7 +78,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
             deselectAll()
             for each in newValue {
                 let btn = weakRefOf(button: each)
-                btn?.value?.isActive = true
+                btn?.value?.isOn = true
             }
         }
         

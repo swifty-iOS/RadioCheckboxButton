@@ -41,6 +41,7 @@ class RadioSampleViewController: UIViewController {
         
         // Set cutsom color for each button
         optionAG3.radioButtonColor = RadioButtonColor(active: UIColor.red, inactive: optionAG3.tintColor)
+        optionBG3.style = .square
         optionBG3.radioButtonColor = RadioButtonColor(active: UIColor.black
             , inactive: optionBG3.tintColor)
         optionCG3.radioButtonColor = RadioButtonColor(active: UIColor.magenta, inactive: UIColor.red)

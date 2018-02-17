@@ -40,11 +40,11 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     /// Deselecting previous selected button
     override func selectionChangeObserver(_ button: RadioButton, _ change: NSKeyValueObservedChange<Bool>) {
         super.selectionChangeObserver(button, change)
-        if button.isActive {
+        if button.isOn {
             // Deselect on selected button excepting current selected button
             forEachButton { object in
-                if object?.isActive == true, object != button {
-                    object?.isActive = false
+                if object?.isOn == true, object != button {
+                    object?.isOn = false
                 }
             }
         }
