@@ -7,5 +7,5 @@ Pod::Spec.new do |s|
   s.author       = { "Swifty-iOS" => "manishej004@gmail.com" }
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/swifty-iOS/RadioCheckboxButton.git", :tag =>s.version }
-  s.source_files  = "Source/*"
+  s.source_files  = "Source/BaseButton/*.*", "Source/RadioButton/*.*", "Source/CheckboxButton/*.*" 
 end
