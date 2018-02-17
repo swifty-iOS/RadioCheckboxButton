@@ -93,6 +93,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     public func addButton(_ button: T) -> Bool {
         // Check if button is already added
         if weakRefOf(button: button) == nil {
+            button.style = buttonStyle ?? button.style
             let newWeakRef = WeakRef<T>(button, handler: selectionChangeObserver)
             buttonContainer.append(newWeakRef)
             return true
@@ -123,7 +124,26 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
         
     }
     
-    // Free up the button which are no more available
+    /// Set common style for button added in container
+    public var buttonStyle: RadioCheckboxStyle? {
+        didSet {
+            guard let newStyle = buttonStyle else { return }
+            setEachButtonStyle { _ in return newStyle }
+        }
+    }
+    
+    /// Set a separate style for each button added in container
+    ///
+    /// - Parameter body: (RadioCheckboxBaseButton) -> RadioCheckboxStyle
+    public func setEachButtonStyle(_ body: (T) -> RadioCheckboxStyle) {
+        forEachButton {
+            if let button = $0 {
+                button.style = body(button)
+            }
+        }
+    }
+    
+    // Free up the button which are no longer available
     internal func compact() {
         
     }
