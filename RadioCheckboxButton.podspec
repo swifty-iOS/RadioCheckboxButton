@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RadioCheckboxButton"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "RadioCheckboxButton help you create Radio and Checkbox. It also help you group the Radio or Checkbox buttons"
   s.homepage     = "https://github.com/swifty-iOS/RadioCheckboxButton"
   s.license      = "MIT"
