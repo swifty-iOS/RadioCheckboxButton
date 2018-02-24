@@ -18,17 +18,17 @@ public struct CheckboxLineStyle {
     let checkmarkLineWidth: CGFloat
     let padding: CGFloat
     
-    init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 6) {
+    public init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 6) {
         self.checkBoxHeight = checkBoxHeight
         self.checkmarkLineWidth = checkmarkLineWidth
         self.padding = padding
     }
     
-    init(checkmarkLineWidth: CGFloat, padding: CGFloat = 6) {
+    public init(checkmarkLineWidth: CGFloat, padding: CGFloat = 6) {
         self.init(checkBoxHeight: 18, checkmarkLineWidth: checkmarkLineWidth, padding: padding)
     }
     
-    init(padding: CGFloat = 6) {
+    public init(padding: CGFloat = 6) {
         self.init(checkmarkLineWidth: -1, padding: padding)
     }
     
@@ -45,6 +45,13 @@ public struct CheckBoxColor {
     let inactiveColor: UIColor
     let inactiveBorderColor: UIColor
     let checkMarkColor: UIColor
+    
+    public init(activeColor: UIColor, inactiveColor: UIColor, inactiveBorderColor: UIColor, checkMarkColor: UIColor) {
+        self.activeColor = activeColor
+        self.inactiveColor = inactiveColor
+        self.inactiveBorderColor = inactiveBorderColor
+        self.checkMarkColor = checkMarkColor
+    }
     
 }
 
