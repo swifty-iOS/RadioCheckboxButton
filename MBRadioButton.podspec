@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MBRadioButton"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "MBRadioButton help you create Radio button without a single line of code. It also help you group the Radio buttons for single selection effect. It gives animation effect and customization."
   s.homepage     = "https://github.com/swifty-iOS/RadioCheckboxButton"
   s.license      = "MIT"
