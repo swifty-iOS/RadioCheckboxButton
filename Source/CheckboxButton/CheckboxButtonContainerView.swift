@@ -9,7 +9,7 @@
 import UIKit
 
 /// View container that hold all CheckboxButton available as first immediate subview only
-public class CheckboxButtonContainerView: UIView {
+open class CheckboxButtonContainerView: UIView {
     
     private var _buttonContainer = CheckboxButtonContainer()
     
@@ -30,14 +30,14 @@ public class CheckboxButtonContainerView: UIView {
     }
     
     /// Ading subview in button conatiner if it is CheckboxButton
-    public override func didAddSubview(_ subview: UIView) {
+    open override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
         guard let button = subview as? CheckboxButtonContainer.Kind else { return }
         addButton(button)
     }
     
     /// Removing CheckboxButton from container
-    public override func willRemoveSubview(_ subview: UIView) {
+    open override func willRemoveSubview(_ subview: UIView) {
         super.willRemoveSubview(subview)
         guard let button = subview as? CheckboxButtonContainer.Kind else { return }
         removeButton(button)
