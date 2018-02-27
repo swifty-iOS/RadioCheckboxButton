@@ -14,7 +14,7 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     /// Checkbox delegate will be assigned to all button added in container
     public weak var delegate: CheckboxButtonDelegate? {
         didSet {
-            forEachButton { $0?.delegate = delegate }
+            allButtons.forEach { $0.delegate = delegate }
         }
     }
     
@@ -47,10 +47,8 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     ///
     /// - Parameter body: (CheckboxButton) -> CheckBoxColor
     public func setEachCheckboxButtonColor(_ body: (Kind) -> CheckBoxColor) {
-        forEachButton {
-            if let button = $0 {
-                button.checkBoxColor = body(button)
-            }
+        allButtons.forEach {
+            $0.checkBoxColor = body($0)
         }
     }
     
@@ -58,11 +56,9 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     ///
     /// - Parameter body: (CheckboxButton) -> CheckboxLineStyle
     public func setEachCheckboxButtonLineStyle(_ body: (Kind) -> CheckboxLineStyle) {
-        forEachButton {
-            if let button = $0 {
-                button.checkboxLine = body(button)
-            }
+        allButtons.forEach {
+            $0.checkboxLine = body($0)
         }
     }
- 
+    
 }

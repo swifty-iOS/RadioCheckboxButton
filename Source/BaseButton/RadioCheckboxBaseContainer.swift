@@ -42,11 +42,9 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
         return buttonContainer.first(where: { $0.value == button })
     }
     
-    /// Eterate all button
-    ///
-    /// - Parameter button: Block with RadioCheckboxBaseButton objet
-    internal func forEachButton(_ button: (T?) -> Void) {
-        buttonContainer.forEach { button($0.value) }
+    /// Get all buttons in container
+    public var allButtons: [T] {
+        return buttonContainer.filter { $0.value != nil }.map { $0.value! }
     }
     
     /// Add buttons into container
@@ -58,20 +56,14 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     
     /// Deselect all buttons
     public func deselectAll() {
-        forEachButton { $0?.isOn = false }
+        allButtons.forEach { $0.isOn = false }
     }
     
     /// Get / set selected all buttons
     public var selectedButtons: [T] {
         
         get {
-            var result = [T]()
-            forEachButton { button in
-                if button != nil, button!.isOn {
-                    result.append(button!)
-                }
-            }
-            return result
+            return allButtons.filter { $0.isOn }
         }
         
         set {
@@ -136,16 +128,22 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     ///
     /// - Parameter body: (RadioCheckboxBaseButton) -> RadioCheckboxStyle
     public func setEachButtonStyle(_ body: (T) -> RadioCheckboxStyle) {
-        forEachButton {
-            if let button = $0 {
-                button.style = body(button)
-            }
+        allButtons.forEach {
+            $0.style = body($0)
         }
     }
     
     // Free up the button which are no longer available
-    internal func compact() {
-        
+    public func compact() {
+    
+        var counter = 0
+        while counter < buttonContainer.count {
+            if buttonContainer[counter].value == nil {
+                buttonContainer.remove(at: counter)
+            } else {
+                counter += 1
+            }
+        }
     }
     
 }

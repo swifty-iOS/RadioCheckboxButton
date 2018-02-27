@@ -14,7 +14,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     /// Radio button delegate will be assigned to all button added in container
     public weak var delegate: RadioButtonDelegate? {
         didSet {
-            forEachButton { $0?.delegate = delegate }
+            allButtons.forEach { $0.delegate = delegate }
         }
     }
     
@@ -42,9 +42,9 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
         super.selectionChangeObserver(button, change)
         if button.isOn {
             // Deselect on selected button excepting current selected button
-            forEachButton { object in
-                if object?.isOn == true, object != button {
-                    object?.isOn = false
+            allButtons.forEach {
+                if $0.isOn, button != $0 {
+                    $0.isOn = false
                 }
             }
         }
@@ -72,10 +72,8 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     ///
     /// - Parameter body: (RadioButton) -> RadioButtonColor
     public func setEachRadioButtonColor(_ body: (Kind) -> RadioButtonColor) {
-        forEachButton {
-            if let button = $0 {
-                button.radioButtonColor = body(button)
-            }
+        allButtons.forEach {
+                $0.radioButtonColor = body($0)
         }
     }
     
@@ -83,10 +81,8 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     ///
     /// - Parameter body: (RadioButton) -> RadioButtonCircleStyle
     public func setEachRadioButtonCircleStyle(_ body: (Kind) -> RadioButtonCircleStyle) {
-        forEachButton {
-            if let button = $0 {
-                button.radioCircle = body(button)
-            }
+        allButtons.forEach {
+                $0.radioCircle = body($0)
         }
     }
 }
