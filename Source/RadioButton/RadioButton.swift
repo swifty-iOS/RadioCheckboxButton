@@ -8,53 +8,31 @@
 
 import UIKit
 
-/// Define RadioButtonCircleStyle
-public struct RadioButtonCircleStyle {
-    
-    let outer: CGFloat
-    let inner: CGFloat
-    let lineWidth: CGFloat
-    let contentPadding: CGFloat
-    
-    public init(outerCircle: CGFloat = 16, innerCircle: CGFloat = 7, outerCircleBorder: CGFloat = 2, contentPadding: CGFloat = 6) {
-        self.outer = outerCircle
-        self.inner = innerCircle
-        self.lineWidth = outerCircleBorder
-        self.contentPadding = contentPadding
-    }
-    
-    public init(outerCircle: CGFloat, innerCircle: CGFloat) {
-        self.init(outerCircle: outerCircle, innerCircle: innerCircle, outerCircleBorder: 2, contentPadding: 6)
-    }
-    
-    public init(outerCircle: CGFloat, innerCircle: CGFloat, outerCircleBorder: CGFloat) {
-        self.init(outerCircle: outerCircle, innerCircle: innerCircle, outerCircleBorder: outerCircleBorder, contentPadding: 6)
-    }
-    
-}
-
-// MARK:- RadioButtonColor
-
-/// Define RadioButtonColor
-
-public struct RadioButtonColor {
-    let active: UIColor
-    let inactive: UIColor
-}
-
 // MARK:- RadioButtonDelegate
 public protocol RadioButtonDelegate: class {
     
+    /// Delegate called when radio button is Selected
+    ///
+    /// - Parameter button: RadioButton
     func radioButtonDidSelect(_ button: RadioButton)
+    
+    /// Delegate called when radio button is deselected
+    /// It will call automatically when user choose different radio button than selected
+    ///
+    /// - Parameter button: RadioButton
     func radioButtonDidDeselect(_ button: RadioButton)
     
 }
 
-class RadioLayer: CAShapeLayer {
+// MARK:- RadioLayer
+internal class RadioLayer: CAShapeLayer {
+    /// Path for active layer
     var activePath: CGPath?
-    var inactivePath: CGPath?
     
+    /// Path for inactive layer
+    var inactivePath: CGPath?
 }
+
 // MARK:- RadioCheckboxBaseButton
 public class RadioButton: RadioCheckboxBaseButton {
     
@@ -63,6 +41,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     
     private var sizeChangeObserver: NSKeyValueObservation?
     
+    /// Set your delegate handler
     public weak var delegate: RadioButtonDelegate?
     
     /// Apply RadioButtonCircleStyle
@@ -154,6 +133,7 @@ public class RadioButton: RadioCheckboxBaseButton {
 // MARK:- Radio button layer path
 private extension UIBezierPath {
     
+    /// Get outer circle layer
     static func outerCircle(rect: CGRect, circle: RadioButtonCircleStyle, style: RadioCheckboxStyle) -> UIBezierPath {
         let size = CGSize(width: circle.outer, height: circle.outer)
         let newRect = CGRect(origin: CGPoint(x: circle.lineWidth/2, y: rect.size.height/2-(circle.outer/2)), size: size)
@@ -164,6 +144,7 @@ private extension UIBezierPath {
         }
     }
     
+    /// Get inner circle layer
     static func innerCircleActive(rect: CGRect, circle: RadioButtonCircleStyle, style: RadioCheckboxStyle) -> UIBezierPath {
         let size = CGSize(width: circle.inner, height: circle.inner)
         let origon = CGPoint(x: rect.midX-size.width/2, y: rect.midY-size.height/2)
@@ -176,6 +157,7 @@ private extension UIBezierPath {
         
     }
     
+    /// Get inner circle layer for inactive state
     static func innerCircleInactive(rect: CGRect) -> UIBezierPath {
         let origin = CGPoint(x: rect.midX, y: rect.midY)
         let frame = CGRect(origin: origin, size: CGSize.zero)

@@ -47,7 +47,7 @@ public class RadioCheckboxBaseButton: UIButton {
         setup()
     }
     
-    public convenience init?(type buttonType: UIButtonType) {
+    public convenience init?(type buttonType: UIButton.ButtonType) {
         return nil
     }
     

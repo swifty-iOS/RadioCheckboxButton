@@ -6,60 +6,19 @@
 //  Copyright © 2018 Manish. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-
-// MARK: CheckboxLineStyle
-/// Define Checkbox style
-public struct CheckboxLineStyle {
-    
-    let checkBoxHeight: CGFloat
-    let checkmarkLineWidth: CGFloat
-    let padding: CGFloat
-    
-    public init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 6) {
-        self.checkBoxHeight = checkBoxHeight
-        self.checkmarkLineWidth = checkmarkLineWidth
-        self.padding = padding
-    }
-    
-    public init(checkmarkLineWidth: CGFloat, padding: CGFloat = 6) {
-        self.init(checkBoxHeight: 18, checkmarkLineWidth: checkmarkLineWidth, padding: padding)
-    }
-    
-    public init(padding: CGFloat = 6) {
-        self.init(checkmarkLineWidth: -1, padding: padding)
-    }
-    
-    var size: CGSize {
-        return CGSize(width: checkBoxHeight, height: checkBoxHeight)
-    }
-}
-
-// MARK:- CheckBoxColor
-/// Define check box color
-public struct CheckBoxColor {
-    
-    let activeColor: UIColor
-    let inactiveColor: UIColor
-    let inactiveBorderColor: UIColor
-    let checkMarkColor: UIColor
-    
-    public init(activeColor: UIColor, inactiveColor: UIColor, inactiveBorderColor: UIColor, checkMarkColor: UIColor) {
-        self.activeColor = activeColor
-        self.inactiveColor = inactiveColor
-        self.inactiveBorderColor = inactiveBorderColor
-        self.checkMarkColor = checkMarkColor
-    }
-    
-}
-
 // MARK:- CheckboxButtonDelegate
-/// Chebox delegates
 public protocol CheckboxButtonDelegate: class {
     
+    /// Delegate call when Checkbox is selected
+    ///
+    /// - Parameter button: CheckboxButton
     func chechboxButtonDidSelect(_ button: CheckboxButton)
+    
+    /// Delegate call when Checkbox is deselected
+    ///
+    /// - Parameter button: CheckboxButton
     func chechboxButtonDidDeselect(_ button: CheckboxButton)
     
 }
@@ -73,6 +32,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     // Make sure color did should not call while setting internal
     private var radioButtonColorDidSetCall = false
     
+    /// Set you delegate handler
     public weak var delegate: CheckboxButtonDelegate?
     
     /// Set checkbox color to customise the buttons
