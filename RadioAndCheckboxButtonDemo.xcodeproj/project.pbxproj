@@ -20,6 +20,8 @@
 		133733632037D41700E17004 /* RadioButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1337335B2037D41700E17004 /* RadioButtonContainer.swift */; };
 		133733642037D41700E17004 /* RadioButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1337335C2037D41700E17004 /* RadioButtonContainerView.swift */; };
 		133733652037D41700E17004 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1337335D2037D41700E17004 /* RadioButton.swift */; };
+		136DA43521BB818200777CA9 /* RadioButtonCircleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA43421BB818200777CA9 /* RadioButtonCircleStyle.swift */; };
+		136DA43721BB81ED00777CA9 /* RadioButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DA43621BB81ED00777CA9 /* RadioButtonColor.swift */; };
 		139B11AB2031E8EA0036A1A7 /* CheckboxSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11AA2031E8EA0036A1A7 /* CheckboxSampleViewController.swift */; };
 		139B11AD2031F29A0036A1A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B11AC2031F29A0036A1A7 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		1337335B2037D41700E17004 /* RadioButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonContainer.swift; sourceTree = "<group>"; };
 		1337335C2037D41700E17004 /* RadioButtonContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonContainerView.swift; sourceTree = "<group>"; };
 		1337335D2037D41700E17004 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		136DA43421BB818200777CA9 /* RadioButtonCircleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonCircleStyle.swift; sourceTree = "<group>"; };
+		136DA43621BB81ED00777CA9 /* RadioButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonColor.swift; sourceTree = "<group>"; };
 		139B11AA2031E8EA0036A1A7 /* CheckboxSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxSampleViewController.swift; sourceTree = "<group>"; };
 		139B11AC2031F29A0036A1A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,8 @@
 				1337335B2037D41700E17004 /* RadioButtonContainer.swift */,
 				1337335C2037D41700E17004 /* RadioButtonContainerView.swift */,
 				1337335D2037D41700E17004 /* RadioButton.swift */,
+				136DA43421BB818200777CA9 /* RadioButtonCircleStyle.swift */,
+				136DA43621BB81ED00777CA9 /* RadioButtonColor.swift */,
 			);
 			path = RadioButton;
 			sourceTree = "<group>";
@@ -200,12 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				130845402005D8B100C96F1C /* RadioSampleViewController.swift in Sources */,
+				136DA43721BB81ED00777CA9 /* RadioButtonColor.swift in Sources */,
 				133733602037D41700E17004 /* CheckboxButton.swift in Sources */,
 				1337335F2037D41700E17004 /* RadioCheckboxBaseButton.swift in Sources */,
 				133733652037D41700E17004 /* RadioButton.swift in Sources */,
 				139B11AB2031E8EA0036A1A7 /* CheckboxSampleViewController.swift in Sources */,
 				1308453E2005D8B100C96F1C /* AppDelegate.swift in Sources */,
 				133733632037D41700E17004 /* RadioButtonContainer.swift in Sources */,
+				136DA43521BB818200777CA9 /* RadioButtonCircleStyle.swift in Sources */,
 				133733622037D41700E17004 /* CheckboxButtonContainer.swift in Sources */,
 				1337335E2037D41700E17004 /* RadioCheckboxBaseContainer.swift in Sources */,
 				133733642037D41700E17004 /* RadioButtonContainerView.swift in Sources */,
