@@ -99,7 +99,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     /// - Returns: Bool
     @discardableResult
     public func removeButton(_ button: T) -> Bool {
-        guard let index = buttonContainer.index(where: { $0.value == button }) else {
+        guard let index = buttonContainer.firstIndex(where: { $0.value == button }) else {
             return false
         }
         buttonContainer.remove(at: index)
