@@ -14,10 +14,14 @@ public struct RadioButtonColor {
     
     let active: UIColor
     let inactive: UIColor
+    let strokeActiveColor: UIColor?
+    let strokeInactiveColor: UIColor?
     
-    public init(active: UIColor, inactive: UIColor) {
+    public init(active: UIColor, inactive: UIColor, strokeActiveColor: UIColor? = nil, strokeInactiveColor: UIColor? = nil) {
         self.active = active
         self.inactive = inactive
+        self.strokeActiveColor = strokeActiveColor
+        self.strokeInactiveColor = strokeInactiveColor
     }
     
 }
