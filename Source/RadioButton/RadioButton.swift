@@ -53,7 +53,11 @@ public class RadioButton: RadioCheckboxBaseButton {
     public var radioButtonColor: RadioButtonColor! {
         didSet {
             innerLayer.fillColor = radioButtonColor.active.cgColor
-            outerLayer.strokeColor = isOn ? radioButtonColor.active.cgColor : radioButtonColor.inactive.cgColor
+            if isOn {
+                outerLayer.strokeColor = radioButtonColor.strokeActiveColor?.cgColor ?? radioButtonColor.active.cgColor
+            } else {
+                outerLayer.strokeColor = radioButtonColor.strokeInactiveColor?.cgColor ?? radioButtonColor.inactive.cgColor
+            }
         }
     }
     
@@ -75,7 +79,7 @@ public class RadioButton: RadioCheckboxBaseButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: radioCircle.outer + radioCircle.contentPadding, bottom: 0, right: 0)
         // Add layer here
         func addOuterLayer() {
-            outerLayer.strokeColor = radioButtonColor.active.cgColor
+            outerLayer.strokeColor = radioButtonColor.strokeActiveColor?.cgColor ?? radioButtonColor.active.cgColor
             outerLayer.fillColor = UIColor.clear.cgColor
             outerLayer.lineWidth = radioCircle.lineWidth
             outerLayer.path = UIBezierPath.outerCircle(rect: bounds, circle: radioCircle, style: style).cgPath
@@ -112,7 +116,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     /// Updating active layers
     override internal func updateActiveLayer() {
         super.updateActiveLayer()
-        outerLayer.strokeColor = radioButtonColor.active.cgColor
+        outerLayer.strokeColor = radioButtonColor.strokeActiveColor?.cgColor ?? radioButtonColor.active.cgColor
         guard let start = innerLayer.path, let end = innerLayer.activePath else { return }
         innerLayer.animatePath(start: start, end: end)
         innerLayer.path = end
@@ -122,7 +126,7 @@ public class RadioButton: RadioCheckboxBaseButton {
     /// Updating inactive layers
     override internal func updateInactiveLayer() {
         super.updateInactiveLayer()
-        outerLayer.strokeColor = radioButtonColor.inactive.cgColor
+        outerLayer.strokeColor = radioButtonColor.strokeInactiveColor?.cgColor ?? radioButtonColor.inactive.cgColor
         guard let start = innerLayer.path, let end = innerLayer.inactivePath else { return }
         innerLayer.animatePath(start: start, end: end)
         innerLayer.path = end
