@@ -66,7 +66,7 @@
 		130845312005D8B100C96F1C = {
 			isa = PBXGroup;
 			children = (
-				139B8D27200B69E300507D9B /* Source */,
+				139B8D27200B69E300507D9B /* Sources */,
 				1308453C2005D8B100C96F1C /* RadioAndCheckboxButtonDemo */,
 				1308453B2005D8B100C96F1C /* Products */,
 			);
@@ -128,14 +128,14 @@
 			path = RadioButton;
 			sourceTree = "<group>";
 		};
-		139B8D27200B69E300507D9B /* Source */ = {
+		139B8D27200B69E300507D9B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				133733532037D41600E17004 /* BaseButton */,
 				133733562037D41600E17004 /* CheckboxButton */,
 				1337335A2037D41700E17004 /* RadioButton */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */

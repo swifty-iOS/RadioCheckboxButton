@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+public class MyButton {
+    public init () {
+        
+    }
+}
+
 // MARK: CheckboxStyle
 /// Define Checkbox style
 public enum RadioCheckboxStyle {
