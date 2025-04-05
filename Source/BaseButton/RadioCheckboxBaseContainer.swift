@@ -9,8 +9,8 @@
 import Foundation
 
 /// Struct to hold weak reference of a button
+@MainActor
 struct WeakRef<T: RadioCheckboxBaseButton> {
-    
     private var selectionObservation: NSKeyValueObservation?
     weak var value: T?
     
@@ -30,6 +30,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     /// initializer with buttos
     ///
     /// - Parameter buttons: Array<T: RadioCheckboxBaseButton>
+    @MainActor
     public init(_ buttons: [T] = []) {
         addButtons(buttons)
     }
@@ -50,15 +51,16 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     /// Add buttons into container
     ///
     /// - Parameter buttons: RadioCheckboxBaseButton
+    @MainActor
     public func addButtons(_ buttons: [T]) {
         buttons.forEach { addButton($0) }
     }
-    
+    @MainActor
     /// Deselect all buttons
     public func deselectAll() {
         allButtons.forEach { $0.isOn = false }
     }
-    
+    @MainActor
     /// Get / set selected all buttons
     public var selectedButtons: [T] {
         
@@ -82,6 +84,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     /// - Parameter button: RadioCheckboxBaseButton
     /// - Returns: Bool
     @discardableResult
+    @MainActor
     public func addButton(_ button: T) -> Bool {
         // Check if button is already added
         if weakRefOf(button: button) == nil {
@@ -106,17 +109,20 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
         return true
     }
     
-    /// Selection state change onbser for each button.
+    /// Selection state change observer for each button.
     /// Child can override if wants to perform any action on selection state changes
     ///
     /// - Parameters:
     ///   - button: RadioCheckboxBaseButton
     ///   - change: NSKeyValueObservedChange<Bool>
+    
+    @MainActor
     internal func selectionChangeObserver(_ button: T, _ change: NSKeyValueObservedChange<Bool>) {
-        
+        // override to handle action
     }
     
     /// Set common style for button added in container
+    @MainActor
     public var buttonStyle: RadioCheckboxStyle? {
         didSet {
             guard let newStyle = buttonStyle else { return }
@@ -127,6 +133,7 @@ public class RadioCheckboxBaseContainer<T> where T: RadioCheckboxBaseButton {
     /// Set a separate style for each button added in container
     ///
     /// - Parameter body: (RadioCheckboxBaseButton) -> RadioCheckboxStyle
+    @MainActor
     public func setEachButtonStyle(_ body: (T) -> RadioCheckboxStyle) {
         allButtons.forEach {
             $0.style = body($0)

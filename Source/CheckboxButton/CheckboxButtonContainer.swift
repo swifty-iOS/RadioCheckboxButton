@@ -12,6 +12,7 @@ import Foundation
 public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton> {
     
     /// Checkbox delegate will be assigned to all button added in container
+    @MainActor
     public weak var delegate: CheckboxButtonDelegate? {
         didSet {
             allButtons.forEach { $0.delegate = delegate }
@@ -27,6 +28,7 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     
     /// Set common color for all button added in container
     /// No guarantee for newly added buttons
+    @MainActor
     public var checkboxButtonColor: CheckBoxColor? {
         didSet {
             guard let color = checkboxButtonColor else { return }
@@ -36,6 +38,7 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     
     /// Set common radio circel style for all button added in container
     /// No guarantee for newly added buttons
+    @MainActor
     public var checkboxLineStyle: CheckboxLineStyle? {
         didSet {
             guard let style =  checkboxLineStyle else { return }
@@ -46,6 +49,7 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     /// Set separate color style for each checkbox button added in conatainer
     ///
     /// - Parameter body: (CheckboxButton) -> CheckBoxColor
+    @MainActor
     public func setEachCheckboxButtonColor(_ body: (Kind) -> CheckBoxColor) {
         allButtons.forEach {
             $0.checkBoxColor = body($0)
@@ -55,6 +59,7 @@ public class CheckboxButtonContainer: RadioCheckboxBaseContainer<CheckboxButton>
     /// Apply separate CheckboxLine style for each style added in container
     ///
     /// - Parameter body: (CheckboxButton) -> CheckboxLineStyle
+    @MainActor
     public func setEachCheckboxButtonLineStyle(_ body: (Kind) -> CheckboxLineStyle) {
         allButtons.forEach {
             $0.checkboxLine = body($0)

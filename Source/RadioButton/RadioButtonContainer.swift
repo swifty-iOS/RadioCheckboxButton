@@ -12,6 +12,7 @@ import Foundation
 public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     
     /// Radio button delegate will be assigned to all button added in container
+    @MainActor
     public weak var delegate: RadioButtonDelegate? {
         didSet {
             allButtons.forEach { $0.delegate = delegate }
@@ -19,6 +20,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     }
     
     /// Select any radio button available in container. It will automatically deselect all other buttons
+    @MainActor
     public var selectedButton: Kind? {
         get { return selectedButtons.first }
         set {
@@ -52,6 +54,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     
     /// Set common color for all button added in container
     /// No guarantee for newly added buttons
+    @MainActor
     public var radioButtonColor: RadioButtonColor? {
         didSet {
             guard let color = radioButtonColor else { return }
@@ -61,6 +64,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     
     /// Set common radio circel style for all button added in container
     /// No guarantee for newly added buttons
+    @MainActor
     public var radioCircleStyle: RadioButtonCircleStyle? {
         didSet {
             guard let style =  radioCircleStyle else { return }
@@ -71,6 +75,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     /// Set separate radio button color for each button
     ///
     /// - Parameter body: (RadioButton) -> RadioButtonColor
+    @MainActor
     public func setEachRadioButtonColor(_ body: (Kind) -> RadioButtonColor) {
         allButtons.forEach {
                 $0.radioButtonColor = body($0)
@@ -80,6 +85,7 @@ public class RadioButtonContainer: RadioCheckboxBaseContainer<RadioButton> {
     /// Set separate radio button circle style for each button
     ///
     /// - Parameter body: (RadioButton) -> RadioButtonCircleStyle
+    @MainActor
     public func setEachRadioButtonCircleStyle(_ body: (Kind) -> RadioButtonCircleStyle) {
         allButtons.forEach {
                 $0.radioCircle = body($0)

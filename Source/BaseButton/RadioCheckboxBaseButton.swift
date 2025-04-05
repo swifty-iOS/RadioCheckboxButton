@@ -17,6 +17,7 @@ public enum RadioCheckboxStyle {
 
 // MARK: - RadioCheckboxBaseButton
 @IBDesignable
+@MainActor
 public class RadioCheckboxBaseButton: UIButton {
     
     /// Oberver frame change to update style
@@ -108,11 +109,17 @@ public class RadioCheckboxBaseButton: UIButton {
 
 // MARK:- frame change handler
 extension RadioCheckboxBaseButton {
-    
+    @MainActor
     private func addObserverSizeChange() {
-        sizeChangeObserver = observe(\RadioCheckboxBaseButton.frame, changeHandler: sizeChangeObseveHandler)
+       // sizeChangeObserver = observe(\RadioCheckboxBaseButton.frame, changeHandler: sizeChangeObseveHandler)
+        sizeChangeObserver = observe(\.frame, changeHandler: { [weak self] button, value in
+            Task { @MainActor in
+                self?.sizeChangeObseveHandler(button, value)
+            }
+        })
     }
     
+    @MainActor
     private func sizeChangeObseveHandler(_ object: RadioCheckboxBaseButton, _ change: NSKeyValueObservedChange<CGRect>) {
         setupLayer()
     }

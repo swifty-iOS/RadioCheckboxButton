@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK:- CheckboxButtonDelegate
-public protocol CheckboxButtonDelegate: class {
+public protocol CheckboxButtonDelegate: AnyObject {
     
     /// Delegate call when Checkbox is selected
     ///

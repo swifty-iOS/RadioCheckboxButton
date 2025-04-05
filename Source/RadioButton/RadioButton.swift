@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK:- RadioButtonDelegate
-public protocol RadioButtonDelegate: class {
+public protocol RadioButtonDelegate: AnyObject {
     
     /// Delegate called when radio button is Selected
     ///
