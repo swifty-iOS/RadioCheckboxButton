@@ -4,8 +4,8 @@ Pod::Spec.new do |s|
   s.summary      = "MBRadioCheckboxButton help you create Radio and Checkbox button without a single line of code. It also help you group the Radio or Checkbox buttons. It gives animation effects and customization."
   s.homepage     = "https://github.com/swifty-iOS/RadioCheckboxButton"
   s.license      = "MIT"
-  s.author       = { "Swifty-iOS" => "manishej004@gmail.com" }
+  s.author       = { "Swifty-iOS" => "manish.bhande90@gmail.com" }
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/swifty-iOS/RadioCheckboxButton.git", :tag =>s.version }
-  s.source_files  = "Source/BaseButton/*.*", "Source/RadioButton/*.*", "Source/CheckboxButton/*.*" 
+  s.source_files  = "Sources/BaseButton/*.*", "Sources/RadioButton/*.*", "Sources/CheckboxButton/*.*" 
 end
